@@ -31,88 +31,6 @@ selenium-pom-test-framework/
 └── README.md                  # 说明文档
 ```
 
-## 安装依赖
-
-```bash
-cd selenium_tests
-pip install -r requirements.txt
-```
-
-## 运行测试
-
-### 运行所有测试
-```bash
-pytest
-# 或
-python run_tests.py
-```
-
-### 运行指定模块的测试
-```bash
-pytest tests/test_login.py -v
-# 或
-python run_tests.py --module login
-```
-
-### 使用Firefox浏览器
-```bash
-pytest --browser firefox
-# 或
-python run_tests.py --browser firefox
-```
-
-### 无头模式运行
-```bash
-pytest --headless
-# 或
-python run_tests.py --headless
-```
-
-### 生成HTML报告
-```bash
-pytest --html=report.html --self-contained-html
-# 或
-python run_tests.py --report
-```
-
-### 运行冒烟测试
-```bash
-pytest -m smoke
-# 或
-python run_tests.py --smoke
-```
-
-## 测试覆盖功能
-
-| 功能模块 | 测试文件 | 覆盖内容 |
-|---------|---------|---------|
-| 登录功能 | test_login.py | 正常登录、错误用户名/密码、空输入、回车登录、错误高亮 |
-| Alert弹窗 | test_alert.py | Alert按钮、Tooltip、弹窗确认/取消 |
-| 下拉框 | test_dropdown.py | 静态水果选择、动态城市加载、按value/text/index选择 |
-| 文件上传 | test_file_upload.py | 正常上传、多扩展名、空文件、清除上传、路径显示 |
-| 评论功能 | test_comments.py | 添加评论、多条评论、空评论、特殊字符、emoji、长文本 |
-| 多窗口 | test_windows.py | 打开5窗口、窗口切换、弹窗Alert、关闭窗口、窗口信息验证 |
-
-## Page Object 设计
-
-### BasePage
-- 封装通用操作方法（查找元素、点击、输入、等待等）
-- 提供Alert处理和窗口切换方法
-
-### LoginPage
-- 登录相关元素定位
-- 登录流程封装
-- 错误验证方法
-
-### MainPage
-- 主页面所有功能元素
-- Alert按钮、下拉框、文件上传、评论等方法
-- 多窗口操作方法
-
-### PopupWindow
-- 弹窗页面元素
-- 弹窗内Alert和关闭按钮操作
-
 ## 快速开始
 
 ### 1. 启动测试页面
@@ -160,6 +78,67 @@ allure generate allure-results -o allure-report --clean
 allure serve allure-results
 ```
 
+## 运行选项
+
+### 运行指定模块
+```bash
+pytest tests/test_login.py -v
+# 或
+python run_tests.py --module login
+```
+
+### 使用Firefox浏览器
+```bash
+pytest --browser firefox
+# 或
+python run_allure.py --browser firefox
+```
+
+### 无头模式运行
+```bash
+pytest --headless
+# 或
+python run_allure.py --headless
+```
+
+### 运行冒烟测试
+```bash
+pytest -m smoke
+# 或
+python run_tests.py --smoke
+```
+
+## 测试覆盖功能
+
+| 功能模块 | 测试文件 | 覆盖内容 |
+|---------|---------|---------|
+| 登录功能 | test_login.py | 正常登录、错误用户名/密码、空输入、回车登录、错误高亮 |
+| Alert弹窗 | test_alert.py | Alert按钮、Tooltip、弹窗确认/取消 |
+| 下拉框 | test_dropdown.py | 静态水果选择、动态城市加载、按value/text/index选择 |
+| 文件上传 | test_file_upload.py | 正常上传、多扩展名、空文件、清除上传、路径显示 |
+| 评论功能 | test_comments.py | 添加评论、多条评论、空评论、特殊字符、emoji、长文本 |
+| 多窗口 | test_windows.py | 打开5窗口、窗口切换、弹窗Alert、关闭窗口、窗口信息验证 |
+
+## Page Object 设计
+
+### BasePage
+- 封装通用操作方法（查找元素、点击、输入、等待等）
+- 提供Alert处理和窗口切换方法
+
+### LoginPage
+- 登录相关元素定位
+- 登录流程封装
+- 错误验证方法
+
+### MainPage
+- 主页面所有功能元素
+- Alert按钮、下拉框、文件上传、评论等方法
+- 多窗口操作方法
+
+### PopupWindow
+- 弹窗页面元素
+- 弹窗内Alert和关闭按钮操作
+
 ## 测试页面说明
 
 `test_page.html` 是一个专门为Selenium自动化测试设计的练习页面，包含以下功能：
@@ -178,5 +157,6 @@ allure serve allure-results
 
 1. 确保测试页面服务已启动：`python3 -m http.server 8080`
 2. 首次运行会自动下载对应浏览器的WebDriver
-3. 测试失败会自动截图保存到 screenshots/ 目录
+3. 测试失败会自动截图保存到 screenshots/ 目录，并附加到Allure报告
 4. 默认使用Chrome浏览器，可通过参数切换
+5. 使用Allure报告前需要安装Allure命令行工具：`brew install allure` (macOS)
