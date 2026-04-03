@@ -58,6 +58,8 @@ def driver(browser, headless, local_driver):
         else:
             # 尝试自动下载，失败则回退到本地驱动
             try:
+                os.environ['WDM_GITHUB_RELEASE_URL'] = 'https://registry.npmmirror.com/-/binary/chromedriver'
+                os.environ['WDM_GITHUB_LATEST_RELEASE_URL'] = 'https://registry.npmmirror.com/-/binary/chromedriver/LATEST_RELEASE' 
                 from webdriver_manager.chrome import ChromeDriverManager
                 driver = webdriver.Chrome(
                     service=Service(ChromeDriverManager().install()),
