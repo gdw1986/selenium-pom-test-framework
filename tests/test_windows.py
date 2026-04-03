@@ -2,11 +2,6 @@
 多窗口功能测试用例
 """
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.popup_window import PopupWindow
@@ -14,22 +9,6 @@ from pages.popup_window import PopupWindow
 
 class TestWindows:
     """多窗口功能测试类"""
-    
-    @pytest.fixture(scope="function")
-    def driver(self):
-        """测试前置：创建driver"""
-        chrome_options = Options()
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--window-size=1920,1080")
-        
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=chrome_options
-        )
-        driver.implicitly_wait(10)
-        yield driver
-        driver.quit()
     
     @pytest.fixture(scope="function")
     def main_page(self, driver):
