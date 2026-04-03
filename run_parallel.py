@@ -76,9 +76,9 @@ def main():
         sys.executable, '-m', 'pytest',
         args.tests,
         '-v',
-        f'-n={num_processes}',
-        f'--dist={args.dist}',
-        f'--browser={args.browser}'
+        '-n', str(num_processes),
+        '--dist', args.dist,
+        '--browser', args.browser
     ]
     
     if args.headless:

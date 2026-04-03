@@ -24,6 +24,7 @@ selenium-pom-test-framework/
 │   ├── __init__.py
 │   ├── conftest.py            # Pytest配置（fixture、hook）
 │   └── pytest.ini             # Pytest配置（标记、选项）
+├── conftest.py                # 根目录Pytest配置（导入config）
 ├── test_page.html             # 测试页面（被测系统）
 ├── requirements.txt           # 依赖包
 ├── run_tests.py               # 基础测试运行脚本
