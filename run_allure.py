@@ -67,8 +67,12 @@ def main():
         f'--browser={args.browser}'
     ]
     
+    print(f"\n[DEBUG] args.headless = {args.headless} (类型: {type(args.headless).__name__})")
     if args.headless:
         pytest_cmd.append('--headless')
+        print("[DEBUG] 已添加 --headless 到命令")
+    else:
+        print("[DEBUG] 未添加 --headless")
     
     # 运行测试
     if not run_command(pytest_cmd, "运行测试并生成Allure结果"):
