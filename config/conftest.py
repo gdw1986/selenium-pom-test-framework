@@ -74,6 +74,18 @@ def driver(browser, headless):
         raise ValueError(f"不支持的浏览器类型: {browser}")
     
     driver.implicitly_wait(10)
+    
+    # 添加Allure步骤：记录浏览器启动
+    try:
+        import allure
+        allure.attach(
+            f"浏览器: {browser}\n无头模式: {headless}",
+            name="测试环境",
+            attachment_type=allure.attachment_type.TEXT
+        )
+    except ImportError:
+        pass
+    
     yield driver
     driver.quit()
 
@@ -97,7 +109,7 @@ def logged_in_driver(driver):
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     """
-    测试失败时自动截图
+    测试失败时自动截图，并附加到Allure报告
     """
     outcome = yield
     report = outcome.get_result()
@@ -113,3 +125,14 @@ def pytest_runtest_makereport(item, call):
             screenshot_path = f"{screenshot_dir}/{item.name}.png"
             driver.save_screenshot(screenshot_path)
             print(f"\n截图已保存: {screenshot_path}")
+            
+            # 附加截图到Allure报告
+            try:
+                import allure
+                allure.attach.file(
+                    screenshot_path,
+                    name="失败截图",
+                    attachment_type=allure.attachment_type.PNG
+                )
+            except ImportError:
+                pass  # Allure未安装时忽略

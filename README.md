@@ -26,7 +26,8 @@ selenium-pom-test-framework/
 │   └── pytest.ini             # Pytest配置（标记、选项）
 ├── test_page.html             # 测试页面（被测系统）
 ├── requirements.txt           # 依赖包
-├── run_tests.py               # 测试运行脚本
+├── run_tests.py               # 基础测试运行脚本
+├── run_allure.py              # Allure报告运行脚本 ⭐
 └── README.md                  # 说明文档
 ```
 
@@ -120,13 +121,43 @@ python run_tests.py --smoke
 python3 -m http.server 8080
 ```
 
-### 2. 运行测试
+### 2. 安装依赖
 ```bash
-# 安装依赖
 pip install -r requirements.txt
+```
 
-# 运行所有测试
+### 3. 运行测试
+
+#### 方式一：基础运行
+```bash
 pytest
+```
+
+#### 方式二：生成Allure报告（推荐）
+```bash
+# 运行测试并生成Allure报告
+python run_allure.py
+
+# 生成报告并启动Allure服务器
+python run_allure.py --serve
+
+# 清理历史数据后运行
+python run_allure.py --clean
+
+# 保留历史趋势（用于趋势图）
+python run_allure.py --history
+```
+
+#### 方式三：命令行直接运行
+```bash
+# 生成Allure结果
+pytest --alluredir=allure-results
+
+# 生成HTML报告
+allure generate allure-results -o allure-report --clean
+
+# 启动Allure服务器
+allure serve allure-results
 ```
 
 ## 测试页面说明
