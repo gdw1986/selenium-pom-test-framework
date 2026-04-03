@@ -139,10 +139,11 @@ def logged_in_driver(driver):
     """
     from pages.login_page import LoginPage
     from pages.main_page import MainPage
+    from config.settings import LOGIN_USERNAME, LOGIN_PASSWORD
     
     login_page = LoginPage(driver)
     login_page.open_login_page()
-    main_page = login_page.login("test", "test")
+    main_page = login_page.login(LOGIN_USERNAME, LOGIN_PASSWORD)
     
     yield driver, main_page
 

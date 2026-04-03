@@ -2,34 +2,13 @@
 登录功能测试用例
 """
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
+from config.settings import LOGIN_USERNAME, LOGIN_PASSWORD
 
 
 class TestLogin:
     """登录功能测试类"""
-    
-    @pytest.fixture(scope="function")
-    def driver(self):
-        """测试前置：创建driver"""
-        chrome_options = Options()
-        # chrome_options.add_argument("--headless")  # 无头模式，需要时可开启
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--window-size=1920,1080")
-        
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=chrome_options
-        )
-        driver.implicitly_wait(10)
-        yield driver
-        driver.quit()
     
     @pytest.fixture(scope="function")
     def login_page(self, driver):
@@ -48,7 +27,7 @@ class TestLogin:
     
     def test_successful_login(self, login_page):
         """测试正常登录流程"""
-        main_page = login_page.login("test", "test")
+        main_page = login_page.login(LOGIN_USERNAME, LOGIN_PASSWORD)
         
         # 验证登录成功，跳转到主页面
         assert main_page.is_on_main_page(), "登录后未正确跳转到主页面"
@@ -57,7 +36,7 @@ class TestLogin:
     def test_login_with_wrong_username(self, login_page):
         """测试错误用户名"""
         login_page.enter_username("wrong")
-        login_page.enter_password("test")
+        login_page.enter_password(LOGIN_PASSWORD)
         login_page.click_login_button()
         
         assert login_page.has_error(), "错误用户名应显示错误提示"
@@ -66,7 +45,7 @@ class TestLogin:
     
     def test_login_with_wrong_password(self, login_page):
         """测试错误密码"""
-        login_page.enter_username("test")
+        login_page.enter_username(LOGIN_USERNAME)
         login_page.enter_password("wrong")
         login_page.click_login_button()
         
@@ -93,8 +72,8 @@ class TestLogin:
     
     def test_login_by_pressing_enter(self, login_page):
         """测试按回车键登录"""
-        login_page.enter_username("test")
-        login_page.enter_password("test")
+        login_page.enter_username(LOGIN_USERNAME)
+        login_page.enter_password(LOGIN_PASSWORD)
         login_page.press_enter_to_login()
         
         # 等待登录成功
@@ -102,8 +81,8 @@ class TestLogin:
     
     def test_clear_inputs(self, login_page):
         """测试清空输入框功能"""
-        login_page.enter_username("test")
-        login_page.enter_password("test")
+        login_page.enter_username(LOGIN_USERNAME)
+        login_page.enter_password(LOGIN_PASSWORD)
         login_page.clear_inputs()
         
         username = login_page.find_element(LoginPage.USERNAME_INPUT).get_attribute("value")

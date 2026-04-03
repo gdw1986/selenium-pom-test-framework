@@ -23,7 +23,8 @@ selenium-pom-test-framework/
 ├── config/                     # 配置目录
 │   ├── __init__.py
 │   ├── conftest.py            # Pytest配置（fixture、hook）
-│   └── pytest.ini             # Pytest配置（标记、选项）
+│   ├── pytest.ini             # Pytest配置（标记、选项）
+│   └── settings.py            # 测试配置（URL、账号等）
 ├── conftest.py                # 根目录Pytest配置（导入config）
 ├── test_page.html             # 测试页面（被测系统）
 ├── requirements.txt           # 依赖包
@@ -225,6 +226,25 @@ python run_allure.py --local-driver
 Firefox需要下载geckodriver：
 - 下载地址：https://github.com/mozilla/geckodriver/releases
 - 同样添加到PATH或使用 `--local-driver` 参数
+
+## 配置说明
+
+测试配置集中在 `config/settings.py` 文件中：
+
+```python
+# 测试页面URL
+TEST_URL = "http://localhost:8080/test_page.html"
+
+# 登录账号
+LOGIN_USERNAME = "test"
+LOGIN_PASSWORD = "test"
+
+# 浏览器配置
+DEFAULT_BROWSER = "chrome"
+DEFAULT_TIMEOUT = 10
+```
+
+修改此文件即可自定义测试环境。
 
 ## 注意事项
 

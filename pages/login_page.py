@@ -3,13 +3,18 @@
 """
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
+from config.settings import TEST_URL, LOGIN_USERNAME, LOGIN_PASSWORD
 
 
 class LoginPage(BasePage):
     """登录页面Page Object"""
     
     # URL
-    URL = "http://192.168.1.221:8080/test_page.html"
+    URL = TEST_URL
+    
+    # 默认登录凭据
+    DEFAULT_USERNAME = LOGIN_USERNAME
+    DEFAULT_PASSWORD = LOGIN_PASSWORD
     
     # 定位器
     USERNAME_INPUT = (By.ID, "username")
