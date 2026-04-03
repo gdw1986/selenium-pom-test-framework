@@ -28,7 +28,7 @@ def browser(request):
 @pytest.fixture(scope="session")
 def headless(request):
     """获取是否无头模式"""
-    return request.config.getoption("--headless") == "true"
+    return request.config.getoption("--headless")
 
 
 @pytest.fixture(scope="session")
