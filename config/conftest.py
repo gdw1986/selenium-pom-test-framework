@@ -52,9 +52,13 @@ def driver(browser, headless, local_driver):
     
     if browser.lower() == "chrome":
         chrome_options = Options()
+        print(f"[DEBUG] headless值: {headless}, 条件判断结果: {bool(headless)}")
         if headless:
-            print("[DEBUG] 启用Chrome无头模式")
-            chrome_options.add_argument("--headless=new")
+            print("[DEBUG] 正在添加 --headless 参数")
+            # Windows上尝试使用旧版headless语法
+            chrome_options.add_argument("--headless")
+            chrome_options.add_argument("--disable-gpu")
+            chrome_options.add_argument("--disable-software-rasterizer")
         else:
             print("[DEBUG] 使用有头模式")
         chrome_options.add_argument("--no-sandbox")
