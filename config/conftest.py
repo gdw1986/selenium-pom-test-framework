@@ -9,6 +9,15 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
+# 从环境变量读取代理设置，用于webdriver_manager下载
+def setup_proxy():
+    """设置代理环境变量"""
+    # 如果系统已有代理环境变量，保持原样
+    # 如果没有，可以在这里设置默认值
+    proxy = os.environ.get('HTTP_PROXY') or os.environ.get('http_proxy')
+    if proxy:
+        print(f"使用代理: {proxy}")
+
 
 def pytest_addoption(parser):
     """添加命令行选项"""

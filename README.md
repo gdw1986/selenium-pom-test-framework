@@ -157,7 +157,32 @@ python run_tests.py --smoke
 
 ### 1. WebDriver下载失败（网络问题）
 
-如果遇到 `Could not reach host. Are you offline?` 错误，说明自动下载WebDriver失败。有两种解决方案：
+如果遇到 `Could not reach host. Are you offline?` 错误，说明自动下载WebDriver失败。
+
+#### 使用代理（如果你有代理）
+
+**方式1：命令行临时设置（推荐）**
+```bash
+# Windows PowerShell
+$env:HTTP_PROXY="http://127.0.0.1:7890"
+$env:HTTPS_PROXY="http://127.0.0.1:7890"
+pytest
+
+# Windows CMD
+set HTTP_PROXY=http://127.0.0.1:7890
+set HTTPS_PROXY=http://127.0.0.1:7890
+pytest
+
+# 或使用脚本
+python run_with_proxy.py
+```
+
+**方式2：使用本地WebDriver**
+```bash
+pytest --local-driver
+```
+
+#### 其他解决方案
 
 #### 方案A：使用本地WebDriver（推荐）
 ```bash
