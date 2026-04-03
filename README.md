@@ -153,10 +153,41 @@ python run_tests.py --smoke
 | 评论功能 | 输入评论后1秒延迟显示在列表顶部 |
 | 多窗口 | 点击按钮打开5个彩色弹窗 |
 
+## 常见问题
+
+### 1. WebDriver下载失败（网络问题）
+
+如果遇到 `Could not reach host. Are you offline?` 错误，说明自动下载WebDriver失败。有两种解决方案：
+
+#### 方案A：使用本地WebDriver（推荐）
+```bash
+# 先手动下载ChromeDriver并添加到系统PATH
+# 下载地址：https://chromedriver.chromium.org/downloads
+
+# 然后使用 --local-driver 参数运行
+pytest --local-driver
+python run_allure.py --local-driver
+```
+
+#### 方案B：手动下载并配置
+1. 查看Chrome版本：`chrome://version/`
+2. 下载对应版本的ChromeDriver：https://chromedriver.chromium.org/downloads
+3. 解压后将chromedriver.exe放在以下任一位置：
+   - 系统PATH目录
+   - 项目根目录
+   - 指定路径并修改代码
+
+### 2. Firefox驱动问题
+
+Firefox需要下载geckodriver：
+- 下载地址：https://github.com/mozilla/geckodriver/releases
+- 同样添加到PATH或使用 `--local-driver` 参数
+
 ## 注意事项
 
 1. 确保测试页面服务已启动：`python3 -m http.server 8080`
-2. 首次运行会自动下载对应浏览器的WebDriver
+2. 首次运行会自动下载对应浏览器的WebDriver（需要网络）
 3. 测试失败会自动截图保存到 screenshots/ 目录，并附加到Allure报告
 4. 默认使用Chrome浏览器，可通过参数切换
 5. 使用Allure报告前需要安装Allure命令行工具：`brew install allure` (macOS)
+6. 离线环境请使用 `--local-driver` 参数
