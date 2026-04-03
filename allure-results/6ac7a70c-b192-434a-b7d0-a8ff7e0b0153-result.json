@@ -1,0 +1,1 @@
+{"name": "test_city_select_dynamic_loading", "status": "skipped", "description": "测试城市下拉框动态加载", "start": 1775222167009, "stop": 1775222167009, "uuid": "e2a045d8-7683-4dec-bc84-b9b95081b188", "testCaseId": "98b1000e7d79621667762e68a978902c", "fullName": "tests.test_dropdown.TestDropdown#test_city_select_dynamic_loading", "titlePath": ["tests", "test_dropdown.py", "TestDropdown"]}
