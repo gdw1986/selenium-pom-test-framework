@@ -5,7 +5,7 @@
 ## 项目结构
 
 ```
-selenium_tests/
+selenium-pom-test-framework/
 ├── pages/                      # Page Object 层
 │   ├── __init__.py
 │   ├── base_page.py           # 基础页面类
@@ -20,6 +20,7 @@ selenium_tests/
 │   ├── test_file_upload.py    # 文件上传测试
 │   ├── test_comments.py       # 评论功能测试
 │   └── test_windows.py        # 多窗口测试
+├── test_page.html             # 测试页面（被测系统）
 ├── conftest.py                # Pytest配置
 ├── pytest.ini                 # Pytest配置
 ├── requirements.txt           # 依赖包
@@ -108,6 +109,37 @@ python run_tests.py --smoke
 ### PopupWindow
 - 弹窗页面元素
 - 弹窗内Alert和关闭按钮操作
+
+## 快速开始
+
+### 1. 启动测试页面
+```bash
+# 在项目根目录启动HTTP服务器
+python3 -m http.server 8080
+```
+
+### 2. 运行测试
+```bash
+# 安装依赖
+pip install -r requirements.txt
+
+# 运行所有测试
+pytest
+```
+
+## 测试页面说明
+
+`test_page.html` 是一个专门为Selenium自动化测试设计的练习页面，包含以下功能：
+
+| 功能 | 描述 |
+|-----|------|
+| 登录验证 | 用户名/密码均为 `test`，错误时显示红色高亮 |
+| Alert弹窗 | 点击按钮弹出JavaScript alert |
+| 静态下拉框 | 水果选择列表（苹果、香蕉等） |
+| 动态下拉框 | 城市列表，页面加载1.5秒后异步填充 |
+| 文件上传 | 支持拖拽和点击上传，显示fakepath |
+| 评论功能 | 输入评论后1秒延迟显示在列表顶部 |
+| 多窗口 | 点击按钮打开5个彩色弹窗 |
 
 ## 注意事项
 
