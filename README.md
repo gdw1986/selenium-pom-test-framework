@@ -135,7 +135,7 @@ pytest -n auto --maxfail=1
 | Alert弹窗 | test_alert.py | Alert按钮、Tooltip、弹窗确认/取消 |
 | 下拉框 | test_dropdown.py | 静态水果选择、动态城市加载、按value/text/index选择 |
 | 文件上传 | test_file_upload.py | 正常上传、多扩展名、空文件、清除上传、路径显示 |
-| 评论功能 | test_comments.py | 添加评论、多条评论、空评论、特殊字符、emoji、长文本 |
+| 评论功能 | test_comment.py | 新评论显示在最上方、多条评论顺序、toast提示、作者显示 |
 | 多窗口 | test_windows.py | 打开5窗口、窗口切换、弹窗Alert、关闭窗口、窗口信息验证 |
 
 ## Page Object 设计

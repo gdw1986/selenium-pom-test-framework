@@ -4,6 +4,7 @@
 """
 import os
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 from .base_page import BasePage
 
 
@@ -260,6 +261,18 @@ class MainPage(BasePage):
         if comments:
             return comments[0].find_element(By.CSS_SELECTOR, ".comment-author").text
         return ""
+    
+    def get_all_comment_texts(self) -> list:
+        """获取所有评论的文本内容列表，按页面显示顺序"""
+        comments = self.get_all_comments()
+        texts = []
+        for comment in comments:
+            try:
+                text = comment.find_element(By.CSS_SELECTOR, ".comment-content").text
+                texts.append(text)
+            except:
+                pass
+        return texts
     
     def is_comment_toast_visible(self) -> bool:
         """判断评论提交成功提示是否显示"""
