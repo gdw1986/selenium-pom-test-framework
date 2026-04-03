@@ -28,6 +28,8 @@ selenium-pom-test-framework/
 ├── requirements.txt           # 依赖包
 ├── run_tests.py               # 基础测试运行脚本
 ├── run_allure.py              # Allure报告运行脚本 ⭐
+├── run_parallel.py            # 并行运行测试脚本 ⚡
+├── run_with_proxy.py          # 带代理的测试运行脚本 🌐
 └── README.md                  # 说明文档
 ```
 
@@ -106,6 +108,21 @@ python run_allure.py --headless
 pytest -m smoke
 # 或
 python run_tests.py --smoke
+```
+
+### 并行运行测试
+```bash
+# 使用所有CPU核心并行运行
+pytest -n auto
+
+# 指定并行进程数
+pytest -n 4
+
+# 并行运行 + 生成Allure报告
+pytest -n auto --alluredir=allure-results
+
+# 失败时立即终止
+pytest -n auto --maxfail=1
 ```
 
 ## 测试覆盖功能
