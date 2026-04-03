@@ -20,9 +20,11 @@ selenium-pom-test-framework/
 │   ├── test_file_upload.py    # 文件上传测试
 │   ├── test_comments.py       # 评论功能测试
 │   └── test_windows.py        # 多窗口测试
+├── config/                     # 配置目录
+│   ├── __init__.py
+│   ├── conftest.py            # Pytest配置（fixture、hook）
+│   └── pytest.ini             # Pytest配置（标记、选项）
 ├── test_page.html             # 测试页面（被测系统）
-├── conftest.py                # Pytest配置
-├── pytest.ini                 # Pytest配置
 ├── requirements.txt           # 依赖包
 ├── run_tests.py               # 测试运行脚本
 └── README.md                  # 说明文档
