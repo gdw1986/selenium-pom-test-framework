@@ -119,7 +119,7 @@ class TestComments:
     
     def test_comment_with_special_characters(self, main_page):
         """测试添加包含特殊字符的评论"""
-        test_comment = "特殊字符测试：<script>alert('xss')</script> & "测试" '引号'"
+        test_comment = "特殊字符测试：<script>alert('xss')</script> & \"测试\" '引号'"
         
         main_page.add_comment(test_comment)
         
