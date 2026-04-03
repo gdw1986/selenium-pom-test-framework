@@ -44,10 +44,19 @@ def driver(browser, headless, local_driver):
     支持Chrome和Firefox
     支持本地驱动和自动下载
     """
+    # 打印调试信息
+    print(f"\n[DEBUG] pytest命令行参数:")
+    print(f"[DEBUG]   browser: {browser}")
+    print(f"[DEBUG]   headless: {headless} (类型: {type(headless).__name__})")
+    print(f"[DEBUG]   local_driver: {local_driver}")
+    
     if browser.lower() == "chrome":
         chrome_options = Options()
         if headless:
-            chrome_options.add_argument("--headless")
+            print("[DEBUG] 启用Chrome无头模式")
+            chrome_options.add_argument("--headless=new")
+        else:
+            print("[DEBUG] 使用有头模式")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--window-size=1920,1080")
@@ -73,7 +82,10 @@ def driver(browser, headless, local_driver):
     elif browser.lower() == "firefox":
         firefox_options = FirefoxOptions()
         if headless:
+            print("[DEBUG] 启用Firefox无头模式")
             firefox_options.add_argument("--headless")
+        else:
+            print("[DEBUG] Firefox使用有头模式")
         firefox_options.add_argument("--width=1920")
         firefox_options.add_argument("--height=1080")
         
