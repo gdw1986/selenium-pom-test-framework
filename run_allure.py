@@ -51,6 +51,8 @@ def main():
                         help='启用无头模式')
     parser.add_argument('--tests', default='tests/',
                         help='指定测试目录或文件')
+    parser.add_argument('--workers', default='auto',
+                        help='并行worker数量，默认auto（-n auto）')
     
     args = parser.parse_args()
     
@@ -63,16 +65,13 @@ def main():
         'python', '-m', 'pytest',
         args.tests,
         '-v',
+        f'-n', args.workers,
         '--alluredir=allure-results',
         f'--browser={args.browser}'
     ]
     
-    print(f"\n[DEBUG] args.headless = {args.headless} (类型: {type(args.headless).__name__})")
     if args.headless:
         pytest_cmd.append('--headless')
-        print("[DEBUG] 已添加 --headless 到命令")
-    else:
-        print("[DEBUG] 未添加 --headless")
     
     # 运行测试
     if not run_command(pytest_cmd, "运行测试并生成Allure结果"):
