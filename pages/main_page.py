@@ -85,7 +85,7 @@ class MainPage(BasePage):
     
     def open_five_windows(self) -> list:
         """
-        打开5个新窗口，返回所有窗口句柄
+        打开5个新窗口，返回按窗口编号(1-5)排序的句柄列表
         """
         initial_handles = set(self.get_window_handles())
         self.click_open_windows_button()
@@ -97,7 +97,30 @@ class MainPage(BasePage):
         
         all_handles = self.get_window_handles()
         new_handles = [h for h in all_handles if h not in initial_handles]
-        return new_handles
+        
+        # driver.window_handles的顺序不保证与窗口实际编号一致
+        # 需要切换到每个窗口读取标题，然后按编号排序
+        current_handle = self.driver.current_window_handle
+        handle_order = []
+        for h in new_handles:
+            self.driver.switch_to.window(h)
+            title = self.driver.title or self.driver.find_element(
+                "css selector", "h2"
+            ).text
+            # 提取标题中的数字，如 "窗口 3" -> 3
+            try:
+                num = int(''.join(filter(str.isdigit, title)))
+            except ValueError:
+                num = 0
+            handle_order.append((num, h))
+        
+        # 按编号升序排列
+        handle_order.sort(key=lambda x: x[0])
+        sorted_handles = [h for _, h in handle_order]
+        
+        # 切换回主窗口
+        self.driver.switch_to.window(current_handle)
+        return sorted_handles
     
     def close_all_popup_windows(self, main_handle: str):
         """关闭所有弹窗，回到主窗口"""
