@@ -1,0 +1,33 @@
+# config/__init__.py
+# Re-export all settings for convenient import
+from .settings import (
+    TEST_URL,
+    LOGIN_USERNAME,
+    LOGIN_PASSWORD,
+    DEFAULT_BROWSER,
+    DEFAULT_HEADLESS,
+    DEFAULT_TIMEOUT,
+    VALID_FRUITS,
+    VALID_CITIES,
+    FRUIT_OPTIONS,
+    CITY_OPTIONS,
+    INITIAL_COMMENTS,
+    INITIAL_COMMENT_COUNT,
+    CITY_LOAD_DELAY_MS,
+)
+
+__all__ = [
+    "TEST_URL",
+    "LOGIN_USERNAME",
+    "LOGIN_PASSWORD",
+    "DEFAULT_BROWSER",
+    "DEFAULT_HEADLESS",
+    "DEFAULT_TIMEOUT",
+    "VALID_FRUITS",
+    "VALID_CITIES",
+    "FRUIT_OPTIONS",
+    "CITY_OPTIONS",
+    "INITIAL_COMMENTS",
+    "INITIAL_COMMENT_COUNT",
+    "CITY_LOAD_DELAY_MS",
+]
