@@ -1,256 +1,84 @@
 # Selenium Page Object 测试框架
 
-基于 Page Object Pattern 的 Selenium 自动化测试框架，用于测试 test_page.html 页面的所有功能。
+基于 Page Object Pattern 的双框架自动化测试项目，涵盖 Selenium (pytest) + Robot Framework 两种测试技术栈，共同测试 `test_page.html` 页面全部功能。
 
 ## 项目结构
 
 ```
 selenium-pom-test-framework/
-├── pages/                      # Page Object 层
-│   ├── __init__.py
-│   ├── base_page.py           # 基础页面类
-│   ├── login_page.py          # 登录页面
-│   ├── main_page.py           # 主页面
-│   └── popup_window.py        # 弹窗页面
-├── tests/                      # 测试用例层
-│   ├── __init__.py
-│   ├── test_login.py          # 登录功能测试
-│   ├── test_alert.py          # Alert弹窗测试
-│   ├── test_dropdown.py       # 下拉框测试
-│   ├── test_file_upload.py    # 文件上传测试
-│   ├── test_comments.py       # 评论功能测试
-│   └── test_windows.py        # 多窗口测试
-├── config/                     # 配置目录
-│   ├── __init__.py
-│   ├── conftest.py            # Pytest配置（fixture、hook）
-│   ├── pytest.ini             # Pytest配置（标记、选项）
-│   └── settings.py            # 测试配置（URL、账号等）
-├── conftest.py                # 根目录Pytest配置（导入config）
-├── test_page.html             # 测试页面（被测系统）
-├── requirements.txt           # 依赖包
-├── run_tests.py               # 基础测试运行脚本
-├── run_allure.py              # Allure报告运行脚本 ⭐
-├── run_parallel.py            # 并行运行测试脚本 ⚡
-├── run_with_proxy.py          # 带代理的测试运行脚本 🌐
-└── README.md                  # 说明文档
+├── selenium-pom/               # Selenium + pytest 框架
+│   ├── pages/                  # Page Object 层
+│   ├── tests/                  # pytest 测试用例
+│   ├── config/                 # 配置和 fixtures
+│   ├── conftest.py            # pytest 根配置
+│   ├── run_tests.py           # 顺序执行
+│   ├── run_parallel.py         # pytest-xdist 并行
+│   └── run_allure.py           # Allure 报告
+│
+├── rf-playwright/              # Robot Framework + Playwright 框架
+│   ├── tests/                  # .robot 测试套件
+│   ├── tests_py/               # pytest + Playwright（Python）
+│   ├── resources/              # RF 公共关键字
+│   ├── locators/               # 统一 locator 配置（JSON）
+│   ├── config/                 # Python 配置
+│   ├── run_tests.py            # Robot Framework 顺序执行
+│   ├── run_parallel.py          # pabot 并行
+│   └── pytest.ini              # pytest 配置（tests_py）
+│
+└── test_page.html             # 被测页面（共享）
 ```
 
 ## 快速开始
 
-### 1. 启动测试页面
-```bash
-# 在项目根目录启动HTTP服务器
-python3 -m http.server 8080
-```
+### Selenium + pytest
 
-### 2. 安装依赖
 ```bash
+cd selenium-pom
 pip install -r requirements.txt
+python -m http.server 8080        # 启动服务
+python run_tests.py              # 跑全部测试
+python run_parallel.py --workers 4
 ```
 
-### 3. 运行测试
+### Robot Framework + Playwright
 
-#### 方式一：基础运行
 ```bash
-pytest
+cd rf-playwright
+pip install -r requirements.txt
+python -m http.server 8080        # 启动服务
+robot tests/                       # 跑全部 .robot 套件
+robot --suite tabs tests/          # 只跑指定套件
+pabot --processes 4 tests/        # 并行执行
+pytest tests_py/ -v               # pytest + Playwright
 ```
 
-#### 方式二：生成Allure报告（推荐）
-```bash
-# 运行测试并生成Allure报告
-python run_allure.py
+## 测试覆盖
 
-# 生成报告并启动Allure服务器
-python run_allure.py --serve
+| 功能 | Selenium (pytest) | RF (robot) | pytest + Playwright |
+|------|:-----------------:|:----------:|:-------------------:|
+| 登录 | ✅ | ✅ | — |
+| Alert 弹窗 | ✅ | ✅ | — |
+| 下拉框 | ✅ | ✅ | — |
+| 文件上传 | ✅ | ✅ | — |
+| 评论区 | ✅ | ✅ | — |
+| 多窗口 | ✅ | ✅ | — |
+| Tab 导航 | — | ✅ | ✅ |
+| iFrame | — | ✅ | ✅ |
+| 任务表格 | — | ✅ | ✅ |
+| 进度条 | — | ✅ | ✅ |
+| 通知系统 | — | ✅ | ✅ |
+| 倒计时器 | — | ✅ | ✅ |
 
-# 清理历史数据后运行
-python run_allure.py --clean
+## 框架对比
 
-# 保留历史趋势（用于趋势图）
-python run_allure.py --history
-```
+| | Selenium + pytest | Robot Framework |
+|---|---|---|
+| 编程语言 | Python | DSL（关键字） |
+| 报告 | Allure | Robot 原生 + Allure |
+| 并行 | pytest-xdist | pabot |
+| 学习曲线 | 需 Python 基础 | 非程序员友好 |
+| 数据驱动 | pytest fixtures | RF Variables |
 
-#### 方式三：命令行直接运行
-```bash
-# 生成Allure结果
-pytest --alluredir=allure-results
+## 原始项目
 
-# 生成HTML报告
-allure generate allure-results -o allure-report --clean
-
-# 启动Allure服务器
-allure serve allure-results
-```
-
-## 运行选项
-
-### 运行指定模块
-```bash
-pytest tests/test_login.py -v
-# 或
-python run_tests.py --module login
-```
-
-### 使用Firefox浏览器
-```bash
-pytest --browser firefox
-# 或
-python run_allure.py --browser firefox
-```
-
-### 无头模式运行
-```bash
-pytest --headless
-# 或
-python run_allure.py --headless
-```
-
-### 运行冒烟测试
-```bash
-pytest -m smoke
-# 或
-python run_tests.py --smoke
-```
-
-### 并行运行测试
-```bash
-# 使用所有CPU核心并行运行
-pytest -n auto
-
-# 指定并行进程数
-pytest -n 4
-
-# 并行运行 + 生成Allure报告
-pytest -n auto --alluredir=allure-results
-
-# 失败时立即终止
-pytest -n auto --maxfail=1
-```
-
-## 测试覆盖功能
-
-| 功能模块 | 测试文件 | 覆盖内容 |
-|---------|---------|---------|
-| 登录功能 | test_login.py | 正常登录、错误用户名/密码、空输入、回车登录、错误高亮 |
-| Alert弹窗 | test_alert.py | Alert按钮、Tooltip、弹窗确认/取消 |
-| 下拉框 | test_dropdown.py | 静态水果选择、动态城市加载、按value/text/index选择 |
-| 文件上传 | test_file_upload.py | 正常上传、多扩展名、空文件、清除上传、路径显示 |
-| 评论功能 | test_comment.py | 新评论显示在最上方、多条评论顺序、toast提示、作者显示 |
-| 多窗口 | test_windows.py | 打开5窗口、窗口切换、弹窗Alert、关闭窗口、窗口信息验证 |
-
-## Page Object 设计
-
-### BasePage
-- 封装通用操作方法（查找元素、点击、输入、等待等）
-- 提供Alert处理和窗口切换方法
-
-### LoginPage
-- 登录相关元素定位
-- 登录流程封装
-- 错误验证方法
-
-### MainPage
-- 主页面所有功能元素
-- Alert按钮、下拉框、文件上传、评论等方法
-- 多窗口操作方法
-
-### PopupWindow
-- 弹窗页面元素
-- 弹窗内Alert和关闭按钮操作
-
-## 测试页面说明
-
-`test_page.html` 是一个专门为Selenium自动化测试设计的练习页面，包含以下功能：
-
-| 功能 | 描述 |
-|-----|------|
-| 登录验证 | 用户名/密码均为 `test`，错误时显示红色高亮 |
-| Alert弹窗 | 点击按钮弹出JavaScript alert |
-| 静态下拉框 | 水果选择列表（苹果、香蕉等） |
-| 动态下拉框 | 城市列表，页面加载1.5秒后异步填充 |
-| 文件上传 | 支持拖拽和点击上传，显示fakepath |
-| 评论功能 | 输入评论后1秒延迟显示在列表顶部 |
-| 多窗口 | 点击按钮打开5个彩色弹窗 |
-
-## 常见问题
-
-### 1. WebDriver下载失败（网络问题）
-
-如果遇到 `Could not reach host. Are you offline?` 错误，说明自动下载WebDriver失败。
-
-#### 使用代理（如果你有代理）
-
-**方式1：命令行临时设置（推荐）**
-```bash
-# Windows PowerShell
-$env:HTTP_PROXY="http://127.0.0.1:7890"
-$env:HTTPS_PROXY="http://127.0.0.1:7890"
-pytest
-
-# Windows CMD
-set HTTP_PROXY=http://127.0.0.1:7890
-set HTTPS_PROXY=http://127.0.0.1:7890
-pytest
-
-# 或使用脚本
-python run_with_proxy.py
-```
-
-**方式2：使用本地WebDriver**
-```bash
-pytest --local-driver
-```
-
-#### 其他解决方案
-
-#### 方案A：使用本地WebDriver（推荐）
-```bash
-# 先手动下载ChromeDriver并添加到系统PATH
-# 下载地址：https://chromedriver.chromium.org/downloads
-
-# 然后使用 --local-driver 参数运行
-pytest --local-driver
-python run_allure.py --local-driver
-```
-
-#### 方案B：手动下载并配置
-1. 查看Chrome版本：`chrome://version/`
-2. 下载对应版本的ChromeDriver：https://chromedriver.chromium.org/downloads
-3. 解压后将chromedriver.exe放在以下任一位置：
-   - 系统PATH目录
-   - 项目根目录
-   - 指定路径并修改代码
-
-### 2. Firefox驱动问题
-
-Firefox需要下载geckodriver：
-- 下载地址：https://github.com/mozilla/geckodriver/releases
-- 同样添加到PATH或使用 `--local-driver` 参数
-
-## 配置说明
-
-测试配置集中在 `config/settings.py` 文件中：
-
-```python
-# 测试页面URL
-TEST_URL = "http://localhost:8080/test_page.html"
-
-# 登录账号
-LOGIN_USERNAME = "test"
-LOGIN_PASSWORD = "test"
-
-# 浏览器配置
-DEFAULT_BROWSER = "chrome"
-DEFAULT_TIMEOUT = 10
-```
-
-修改此文件即可自定义测试环境。
-
-## 注意事项
-
-1. 确保测试页面服务已启动：`python3 -m http.server 8080`
-2. 首次运行会自动下载对应浏览器的WebDriver（需要网络）
-3. 测试失败会自动截图保存到 screenshots/ 目录，并附加到Allure报告
-4. 默认使用Chrome浏览器，可通过参数切换
-5. 使用Allure报告前需要安装Allure命令行工具：`brew install allure` (macOS)
-6. 离线环境请使用 `--local-driver` 参数
+本项目源自 [gdw1986/selenium-pom-test-framework](https://github.com/gdw1986/selenium-pom-test-framework)，新增 Robot Framework + Playwright 框架作为扩展。
