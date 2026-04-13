@@ -3,7 +3,6 @@
 import subprocess
 import argparse
 import sys
-import os
 import urllib.request
 
 SUITES = {
@@ -13,6 +12,7 @@ SUITES = {
     "upload":  "tests/test_file_upload.robot",
     "comment": "tests/test_comments.robot",
     "window":  "tests/test_windows.robot",
+    "tabs":    "tests/test_tabs.robot",
     "all":     None,
 }
 
@@ -31,7 +31,7 @@ def run_tests(suite="all", browser="chromium", headless=False, verbose=False):
         "--outputdir", "results",
         "--loglevel", "INFO",
         "-v", f"BROWSER:{browser}",
-        "-v", f"DEFAULT_HEADLESS:{str(headless).lower()}",
+        "-v", f"HEADLESS:{str(headless).lower()}",
     ]
 
     if verbose:

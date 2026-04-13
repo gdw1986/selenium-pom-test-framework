@@ -40,7 +40,7 @@ Login With Test Credentials
     [Documentation]    Perform login using credentials
     Wait For Elements State    \#login-page    visible    timeout=10s
     Fill Text    \#username    ${LOGIN_USERNAME}
-    Fill Text    \#password    ${LOGIN_PASSWORD}
+    Fill Text    \#password       ${LOGIN_PASSWORD}
     Click    .login-btn
     Wait For Elements State    \#main-page    visible    timeout=5s
 
@@ -60,20 +60,6 @@ Count Pages
     @{page_ids}=    Get Page Ids
     ${count}=    Get Length    ${page_ids}
     RETURN    ${count}
-
-Wait For And Accept Dialog
-    [Documentation]    Wait for dialog, accept it, return message text
-    ${dialog}=    Wait For Alert    timeout=5s
-    ${text}=    Set Variable    ${dialog}[message]
-    Accept Alert
-    RETURN    ${text}
-
-Wait For And Dismiss Dialog
-    [Documentation]    Wait for dialog, dismiss it, return message text
-    ${dialog}=    Wait For Alert    timeout=5s
-    ${text}=    Set Variable    ${dialog}[message]
-    Dismiss Alert
-    RETURN    ${text}
 
 Upload File To Input
     [Arguments]    ${selector}    ${file_path}

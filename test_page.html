@@ -421,9 +421,305 @@
             transform: none;
             box-shadow: none;
         }
+
+        /* ==================== 新增功能模块样式 ==================== */
+
+        /* Tab 导航 */
+        .tab-nav {
+            display: flex;
+            gap: 4px;
+            margin-top: 30px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 20px;
+            border-bottom: 2px solid #e8e8f0;
+            padding-bottom: 0;
+        }
+        .tab-btn {
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 6px 6px 0 0;
+            background: #f0f0f8;
+            color: #666;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+        }
+        .tab-btn:hover {
+            background: #e0e4ff;
+            color: #667eea;
+            transform: none;
+            box-shadow: none;
+        }
+        .tab-btn.active {
+            background: white;
+            color: #667eea;
+            border-bottom-color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Tab 内容区 */
+        .tab-content {
+            display: none;
+            text-align: left;
+            padding-top: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content h3 {
+            font-size: 16px;
+            color: #333;
+            margin: 0 0 14px 0;
+            border-left: 3px solid #667eea;
+            padding-left: 10px;
+        }
+
+        /* iFrame 相关 */
+        .iframe-section iframe {
+            border: 2px solid #e0e4ff;
+            border-radius: 8px;
+            width: 100%;
+            height: 200px;
+            background: #f7f8fc;
+        }
+
+        /* 任务表格 */
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        .task-table th {
+            background: #667eea;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+        .task-table th:first-child { border-radius: 6px 0 0 0; }
+        .task-table th:last-child { border-radius: 0 6px 0 0; }
+        .task-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        .task-table tr:nth-child(even) td { background: #f7f8fc; }
+        .task-table tr:hover td { background: #eef0fd; }
+        .task-table .task-name { font-weight: 500; color: #333; }
+        .task-table .task-status {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .task-status.pending { background: #fff3e0; color: #e67e22; }
+        .task-status.done { background: #e8f5e9; color: #27ae60; }
+        .task-status.in-progress { background: #e3f2fd; color: #2980b9; }
+        .task-actions { display: flex; gap: 6px; }
+        .task-actions button {
+            padding: 4px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        .btn-danger { background: #e74c3c; }
+        .btn-danger:hover { box-shadow: 0 3px 10px rgba(231,76,60,0.4); }
+        .btn-success { background: #27ae60; }
+        .btn-success:hover { box-shadow: 0 3px 10px rgba(39,174,96,0.4); }
+        .btn-edit { background: #f39c12; padding: 4px 12px; font-size: 12px; border-radius: 4px; }
+
+        /* 添加任务表单 */
+        .add-task-form {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .add-task-form input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .add-task-form input:focus { border-color: #667eea; }
+        .add-task-form select {
+            width: 120px;
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+        .add-task-form button {
+            padding: 8px 20px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        /* 搜索过滤 */
+        .task-search {
+            margin-bottom: 10px;
+        }
+        .task-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .task-search input:focus { border-color: #667eea; }
+
+        /* 进度条 */
+        .progress-section {
+            margin-top: 16px;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #555;
+        }
+        .progress-bar-track {
+            width: 100%;
+            height: 14px;
+            background: #e8e8f0;
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 7px;
+            transition: width 0.6s ease;
+            width: 0%;
+        }
+        .progress-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+        .progress-buttons button {
+            padding: 6px 16px;
+            font-size: 13px;
+            border-radius: 6px;
+        }
+
+        /* 通知区域 */
+        .notification-area {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 320px;
+        }
+        .notif {
+            background: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            animation: slideInRight 0.3s ease;
+            border-left: 4px solid #667eea;
+            font-size: 13px;
+            color: #333;
+        }
+        .notif.success { border-left-color: #27ae60; }
+        .notif.warning { border-left-color: #f39c12; }
+        .notif.error { border-left-color: #e74c3c; }
+        .notif-icon { font-size: 18px; flex-shrink: 0; }
+        .notif-content { flex: 1; }
+        .notif-title { font-weight: 600; margin-bottom: 2px; }
+        .notif-body { color: #666; font-size: 12px; }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to   { transform: translateX(0); opacity: 1; }
+        }
+        .notif-close {
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: color 0.2s;
+            border-radius: 0;
+            box-shadow: none;
+            transform: none;
+        }
+        .notif-close:hover { color: #333; transform: none; box-shadow: none; }
+
+        /* 通知触发按钮组 */
+        .notif-triggers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .notif-triggers button {
+            padding: 7px 16px;
+            font-size: 13px;
+            border-radius: 6px;
+        }
+        .btn-green { background: #27ae60; }
+        .btn-green:hover { box-shadow: 0 3px 12px rgba(39,174,96,0.4); }
+        .btn-yellow { background: #f39c12; }
+        .btn-yellow:hover { box-shadow: 0 3px 12px rgba(243,156,18,0.4); }
+        .btn-red { background: #e74c3c; }
+        .btn-red:hover { box-shadow: 0 3px 12px rgba(231,76,60,0.4); }
+
+        /* 倒计时 */
+        .countdown-section {
+            margin-top: 16px;
+            background: #f7f8fc;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+        }
+        .countdown-display {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .countdown-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .countdown-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+        .countdown-buttons button {
+            padding: 6px 14px;
+            font-size: 13px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
+    <!-- 通知容器 -->
+    <div class="notification-area" id="notification-area"></div>
+
     <!-- 登录页面 -->
     <div class="container login-box" id="login-page">
         <h2>🔐 用户登录</h2>
@@ -537,6 +833,204 @@
                 </div>
             </div>
         </div>
+
+        <!-- ========== 新增 Tab 导航 ========== -->
+        <div class="tab-nav" id="tab-nav">
+            <button class="tab-btn active" onclick="switchTab('iframe')" id="tab-btn-iframe">🌐 iFrame</button>
+            <button class="tab-btn" onclick="switchTab('task')" id="tab-btn-task">📋 任务表</button>
+            <button class="tab-btn" onclick="switchTab('progress')" id="tab-btn-progress">📊 进度条</button>
+            <button class="tab-btn" onclick="switchTab('notify')" id="tab-btn-notify">🔔 通知</button>
+            <button class="tab-btn" onclick="switchTab('countdown')" id="tab-btn-countdown">⏱️ 倒计时</button>
+        </div>
+
+        <!-- Tab: iFrame -->
+        <div class="tab-content active" id="tab-iframe">
+            <h3>iFrame 嵌入式表单</h3>
+            <p style="font-size:13px;color:#888;margin:0 0 12px 0;">iframe 内嵌了一个独立表单，可独立交互。</p>
+            <div class="iframe-section">
+                <iframe id="iframe-form" srcdoc="<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<style>
+    body { font-family: -apple-system, sans-serif; padding: 14px; margin: 0; background: #f7f8fc; box-sizing: border-box; }
+    .form-row { margin-bottom: 10px; }
+    .form-row label { display: block; font-size: 12px; color: #555; margin-bottom: 3px; font-weight: 500; }
+    .form-row input, .form-row select { width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #ddd; border-radius: 5px; outline: none; box-sizing: border-box; transition: border-color 0.2s; }
+    .form-row input:focus, .form-row select:focus { border-color: #667eea; }
+    .inline { display: flex; gap: 8px; }
+    .inline .form-row { flex: 1; }
+    .form-btn { background: #667eea; color: white; border: none; padding: 8px 0; border-radius: 5px; cursor: pointer; font-size: 13px; width: 100%; transition: background 0.2s; }
+    .form-btn:hover { background: #5568d4; }
+    .result-box { margin-top: 10px; padding: 8px 10px; background: #e8f0fe; border-radius: 5px; font-size: 12px; color: #333; min-height: 20px; }
+    .result-box.error { background: #ffeaea; color: #c0392b; }
+    .result-box.success { background: #e8f8ee; color: #27ae60; }
+</style>
+</head>
+<body>
+    <div class='form-row'>
+        <label>姓名</label>
+        <input type='text' id='name-input' placeholder='请输入姓名' maxlength='20'>
+    </div>
+    <div class='inline'>
+        <div class='form-row'>
+            <label>年龄</label>
+            <input type='number' id='age-input' placeholder='18-100' min='1' max='100'>
+        </div>
+        <div class='form-row'>
+            <label>部门</label>
+            <select id='dept-select'>
+                <option value=''>-- 选择 --</option>
+                <option value='tech'>技术部</option>
+                <option value='product'>产品部</option>
+                <option value='design'>设计部</option>
+                <option value='ops'>运营部</option>
+            </select>
+        </div>
+    </div>
+    <div class='form-row'>
+        <button class='form-btn' onclick='submitIframeForm()'>提交表单</button>
+    </div>
+    <div class='result-box' id='iframe-result'></div>
+    <script>
+        function submitIframeForm() {
+            var name = document.getElementById('name-input').value.trim();
+            var age = document.getElementById('age-input').value;
+            var dept = document.getElementById('dept-select').value;
+            var result = document.getElementById('iframe-result');
+            if (!name) {
+                result.className = 'result-box error';
+                result.textContent = '姓名不能为空';
+                return;
+            }
+            if (!age || age < 18 || age > 100) {
+                result.className = 'result-box error';
+                result.textContent = '年龄必须在18-100之间';
+                return;
+            }
+            result.className = 'result-box success';
+            result.textContent = '提交成功: ' + name + ' (' + age + '岁, ' + dept + ')';
+        }
+    </script>
+</body>
+</html>"></iframe>
+            </div>
+        </div>
+
+        <!-- Tab: 任务表格 -->
+        <div class="tab-content" id="tab-task">
+            <h3>任务管理表格（CRUD）</h3>
+            <div class="add-task-form">
+                <input type="text" id="new-task-name" placeholder="输入新任务名称...">
+                <select id="new-task-status">
+                    <option value="pending">待处理</option>
+                    <option value="in-progress">进行中</option>
+                    <option value="done">已完成</option>
+                </select>
+                <button onclick="addTask()">添加</button>
+            </div>
+            <div class="task-search">
+                <input type="text" id="task-filter" placeholder="🔍 搜索任务..." oninput="filterTasks()">
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="task-table" id="task-table">
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>任务名称</th>
+                            <th style="width:100px">状态</th>
+                            <th style="width:160px">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-tbody">
+                        <tr data-id="1">
+                            <td>1</td>
+                            <td class="task-name">完成单元测试报告</td>
+                            <td><span class="task-status done">已完成</span></td>
+                            <td class="task-actions">
+                                <button class="btn-edit" onclick="editTask(1)">编辑</button>
+                                <button class="btn-danger" onclick="deleteTask(1)">删除</button>
+                            </td>
+                        </tr>
+                        <tr data-id="2">
+                            <td>2</td>
+                            <td class="task-name">优化登录页面性能</td>
+                            <td><span class="task-status in-progress">进行中</span></td>
+                            <td class="task-actions">
+                                <button class="btn-edit" onclick="editTask(2)">编辑</button>
+                                <button class="btn-danger" onclick="deleteTask(2)">删除</button>
+                            </td>
+                        </tr>
+                        <tr data-id="3">
+                            <td>3</td>
+                            <td class="task-name">集成CI/CD流水线</td>
+                            <td><span class="task-status pending">待处理</span></td>
+                            <td class="task-actions">
+                                <button class="btn-edit" onclick="editTask(3)">编辑</button>
+                                <button class="btn-danger" onclick="deleteTask(3)">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="task-empty" style="display:none;text-align:center;color:#aaa;font-size:13px;padding:16px;">
+                没有匹配的任务
+            </div>
+        </div>
+
+        <!-- Tab: 进度条 -->
+        <div class="tab-content" id="tab-progress">
+            <h3>进度条控制</h3>
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span>项目完成度</span>
+                    <span id="progress-label">0%</span>
+                </div>
+                <div class="progress-bar-track" id="progress-track">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-buttons">
+                    <button onclick="adjustProgress(-10)" id="btn-progress-minus">−10%</button>
+                    <button onclick="adjustProgress(-25)" id="btn-progress-minus25">−25%</button>
+                    <button onclick="resetProgress()">重置</button>
+                    <button onclick="adjustProgress(25)" id="btn-progress-plus25">+25%</button>
+                    <button onclick="adjustProgress(10)" id="btn-progress-plus">+10%</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: 通知 -->
+        <div class="tab-content" id="tab-notify">
+            <h3>通知系统</h3>
+            <p style="font-size:13px;color:#888;margin:0 0 12px 0;">触发不同类型的通知消息，自动3秒后消失。</p>
+            <div class="notif-triggers">
+                <button class="btn-green" onclick="showNotification('success', '保存成功', '用户信息已更新')">✅ 成功通知</button>
+                <button class="btn-yellow" onclick="showNotification('warning', '操作警告', '数据即将过期，请及时保存')">⚠️ 警告通知</button>
+                <button class="btn-red" onclick="showNotification('error', '操作失败', '网络异常，请稍后重试')">❌ 错误通知</button>
+                <button onclick="showNotification('info', '系统消息', '检测到新的版本更新 v2.1.0')">ℹ️ 普通通知</button>
+            </div>
+            <div id="notif-list">
+                <div class="countdown-section">
+                    <div class="countdown-display" id="notif-countdown-display">🔔 点击按钮触发通知</div>
+                    <div class="countdown-label">通知将在页面右上角弹出</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: 倒计时 -->
+        <div class="tab-content" id="tab-countdown">
+            <h3>倒计时器</h3>
+            <div class="countdown-section">
+                <div class="countdown-display" id="countdown-display">00:00</div>
+                <div class="countdown-label" id="countdown-status">设置倒计时时间（秒）</div>
+                <div class="countdown-buttons">
+                    <button onclick="startCountdown(30)">30秒</button>
+                    <button onclick="startCountdown(60)">1分钟</button>
+                    <button onclick="startCountdown(300)">5分钟</button>
+                    <button onclick="resetCountdown()">重置</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- 提交成功提示 -->
@@ -544,41 +1038,33 @@
 
     <!-- 登录成功提示 -->
     <div class="comment-toast" id="login-toast" style="background:#667eea;">✅ 登录成功！</div>
+
     <script>
-        // 页面初始化：显示登录页
+        // ==================== 原有逻辑 ====================
         document.getElementById('login-page').classList.add('active');
 
         function doLogin() {
             var username = document.getElementById('username');
             var password = document.getElementById('password');
             var error = document.getElementById('login-error');
-
-            // 清除错误样式
             username.classList.remove('error');
             password.classList.remove('error');
             error.textContent = '';
-
-            // 验证
             if (username.value !== 'test' || password.value !== 'test') {
                 error.textContent = '❌ 用户名或密码错误';
                 if (username.value !== 'test') username.classList.add('error');
                 if (password.value !== 'test') password.classList.add('error');
                 return;
             }
-
-            // 登录成功
             var toast = document.getElementById('login-toast');
             toast.classList.add('show');
-
             setTimeout(function() {
                 toast.classList.remove('show');
-                // 切换到主页面
                 document.getElementById('login-page').classList.remove('active');
                 document.getElementById('main-page').classList.add('active');
             }, 800);
         }
 
-        // 回车键登录
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') doLogin();
         });
@@ -586,6 +1072,7 @@
         function showAlert() {
             alert('Hello! 这是Selenium测试用的Alert弹窗');
         }
+
         function onSelectChange(sel) {
             var resultId = sel.id === 'fruit-select' ? 'select-result' : 'city-result';
             var result = document.getElementById(resultId);
@@ -595,7 +1082,7 @@
                 result.textContent = '';
             }
         }
-        // 模拟动态加载城市列表（页面加载后1.5秒填充）
+
         window.onload = function() {
             setTimeout(function() {
                 var cities = [
@@ -617,7 +1104,6 @@
             }, 1500);
         };
 
-        // 头像颜色池
         var avatarColors = ['#667eea','#f5a623','#e74c3c','#27ae60','#9b59b6','#2980b9','#e67e22'];
         var colorIndex = 0;
 
@@ -630,20 +1116,15 @@
                 setTimeout(function() { input.style.borderColor = ''; }, 1000);
                 return;
             }
-
-            // 禁用按钮，防止重复提交
             var btn = document.querySelector('.comment-submit-btn');
             btn.disabled = true;
             btn.textContent = '发布中...';
             input.value = '';
-
             setTimeout(function() {
-                // 创建新评论
                 var list = document.getElementById('comment-list');
                 var name = '我';
                 var color = avatarColors[colorIndex % avatarColors.length];
                 colorIndex++;
-
                 var item = document.createElement('div');
                 item.className = 'comment-item';
                 item.innerHTML =
@@ -653,16 +1134,10 @@
                         '<span class="comment-time">刚刚</span>' +
                     '</div>' +
                     '<div class="comment-content">' + escapeHtml(text) + '</div>';
-
-                // 插入到列表最上面
                 list.insertBefore(item, list.firstChild);
-
-                // 显示 toast
                 var toast = document.getElementById('comment-toast');
                 toast.classList.add('show');
                 setTimeout(function() { toast.classList.remove('show'); }, 2000);
-
-                // 恢复按钮
                 btn.disabled = false;
                 btn.textContent = '发布评论';
             }, 1000);
@@ -672,9 +1147,8 @@
             return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
         }
 
-        // 文件上传逻辑
+        // 文件上传
         var dropZone = document.getElementById('upload-drop-zone');
-
         dropZone.addEventListener('dragover', function(e) {
             e.preventDefault();
             dropZone.classList.add('dragover');
@@ -685,9 +1159,8 @@
         dropZone.addEventListener('drop', function(e) {
             e.preventDefault();
             dropZone.classList.remove('dragover');
-            var files = e.dataTransfer.files;
-            if (files.length > 0) {
-                renderFileInfo(files[0], null);
+            if (e.dataTransfer.files.length > 0) {
+                renderFileInfo(e.dataTransfer.files[0], null);
             }
         });
 
@@ -703,16 +1176,11 @@
             var ext = name.split('.').pop().toLowerCase();
             var icon = getFileIcon(ext);
             var fakePath = inputValue || 'C:\\fakepath\\' + name;
-
             document.getElementById('upload-file-icon').textContent = icon;
             document.getElementById('upload-file-name').textContent = name;
             document.getElementById('upload-file-meta').textContent = size + '  ·  ' + (file.type || '未知类型');
             document.getElementById('upload-file-fullpath').textContent = fakePath;
-
-            var info = document.getElementById('upload-file-info');
-            info.classList.add('visible');
-
-            // 隐藏拖拽区提示文字，简化界面
+            document.getElementById('upload-file-info').classList.add('visible');
             dropZone.querySelector('.upload-icon').style.display = 'none';
             dropZone.querySelector('.upload-hint').style.display = 'none';
             dropZone.style.padding = '10px';
@@ -745,11 +1213,9 @@
             return map[ext] || '📄';
         }
 
-        // 打开5个新窗口
         function openFiveWindows() {
             var colors = ['#667eea', '#f5a623', '#e74c3c', '#27ae60', '#9b59b6'];
             var titles = ['窗口 1', '窗口 2', '窗口 3', '窗口 4', '窗口 5'];
-
             for (var i = 0; i < 5; i++) {
                 var w = window.open('', 'popup_' + i, 'width=400,height=300,left=' + (100 + i * 50) + ',top=' + (100 + i * 30));
                 if (w) {
@@ -804,6 +1270,180 @@
     <p class="info">窗口编号: ${num} | 颜色: ${color}</p>
 </body>
 </html>`;
+        }
+
+        // ==================== 新增 Tab 导航逻辑 ====================
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(function(content) {
+                content.classList.remove('active');
+            });
+            document.getElementById('tab-btn-' + tabId).classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        // ==================== 任务表格 CRUD ====================
+        var taskIdCounter = 4;
+
+        function addTask() {
+            var nameInput = document.getElementById('new-task-name');
+            var statusSelect = document.getElementById('new-task-status');
+            var name = nameInput.value.trim();
+            if (!name) {
+                nameInput.focus();
+                nameInput.style.borderColor = '#e74c3c';
+                setTimeout(function() { nameInput.style.borderColor = ''; }, 1000);
+                return;
+            }
+            var id = taskIdCounter++;
+            var status = statusSelect.value;
+            var statusText = {pending: '待处理', 'in-progress': '进行中', done: '已完成'}[status];
+            var statusClass = status;
+
+            var tbody = document.getElementById('task-tbody');
+            var tr = document.createElement('tr');
+            tr.setAttribute('data-id', id);
+            tr.innerHTML =
+                '<td>' + id + '</td>' +
+                '<td class="task-name">' + escapeHtml(name) + '</td>' +
+                '<td><span class="task-status ' + statusClass + '">' + statusText + '</span></td>' +
+                '<td class="task-actions">' +
+                    '<button class="btn-edit" onclick="editTask(' + id + ')">编辑</button>' +
+                    '<button class="btn-danger" onclick="deleteTask(' + id + ')">删除</button>' +
+                '</td>';
+            tbody.appendChild(tr);
+            nameInput.value = '';
+            filterTasks();
+        }
+
+        function deleteTask(id) {
+            var rows = document.querySelectorAll('#task-tbody tr[data-id="' + id + '"]');
+            rows.forEach(function(row) { row.remove(); });
+            renumberTasks();
+            filterTasks();
+        }
+
+        function editTask(id) {
+            var rows = document.querySelectorAll('#task-tbody tr[data-id="' + id + '"]');
+            if (rows.length === 0) return;
+            var row = rows[0];
+            var nameCell = row.querySelector('.task-name');
+            var currentName = nameCell.textContent;
+            var newName = prompt('编辑任务名称:', currentName);
+            if (newName !== null && newName.trim()) {
+                nameCell.textContent = newName.trim();
+            }
+        }
+
+        function filterTasks() {
+            var query = document.getElementById('task-filter').value.trim().toLowerCase();
+            var rows = document.querySelectorAll('#task-tbody tr');
+            var visibleCount = 0;
+            rows.forEach(function(row) {
+                var name = row.querySelector('.task-name').textContent.toLowerCase();
+                if (!query || name.indexOf(query) !== -1) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            document.getElementById('task-empty').style.display = visibleCount === 0 ? '' : 'none';
+        }
+
+        function renumberTasks() {
+            var rows = document.querySelectorAll('#task-tbody tr');
+            rows.forEach(function(row, i) {
+                row.querySelector('td:first-child').textContent = i + 1;
+            });
+        }
+
+        // ==================== 进度条 ====================
+        var currentProgress = 0;
+
+        function adjustProgress(delta) {
+            currentProgress = Math.max(0, Math.min(100, currentProgress + delta));
+            updateProgressBar();
+        }
+
+        function resetProgress() {
+            currentProgress = 0;
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            document.getElementById('progress-fill').style.width = currentProgress + '%';
+            document.getElementById('progress-label').textContent = currentProgress + '%';
+        }
+
+        // ==================== 通知系统 ====================
+        function showNotification(type, title, body) {
+            var area = document.getElementById('notification-area');
+            var icons = {
+                success: '✅',
+                warning: '⚠️',
+                error: '❌',
+                info: 'ℹ️'
+            };
+            var id = 'notif-' + Date.now();
+            var notif = document.createElement('div');
+            notif.className = 'notif ' + type;
+            notif.id = id;
+            notif.innerHTML =
+                '<span class="notif-icon">' + icons[type] + '</span>' +
+                '<div class="notif-content">' +
+                    '<div class="notif-title">' + escapeHtml(title) + '</div>' +
+                    '<div class="notif-body">' + escapeHtml(body) + '</div>' +
+                '</div>' +
+                '<button class="notif-close" onclick="dismissNotification(\'' + id + '\')">✕</button>';
+            area.appendChild(notif);
+            setTimeout(function() { dismissNotification(id); }, 3000);
+        }
+
+        function dismissNotification(id) {
+            var el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        // ==================== 倒计时 ====================
+        var countdownInterval = null;
+        var countdownValue = 0;
+
+        function startCountdown(seconds) {
+            resetCountdown();
+            countdownValue = seconds;
+            updateCountdownDisplay();
+            countdownInterval = setInterval(function() {
+                countdownValue--;
+                if (countdownValue < 0) {
+                    countdownValue = 0;
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown-display').textContent = '⏰ 时间到！';
+                    document.getElementById('countdown-status').textContent = '倒计时已结束';
+                } else {
+                    updateCountdownDisplay();
+                }
+            }, 1000);
+        }
+
+        function resetCountdown() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            countdownValue = 0;
+            document.getElementById('countdown-display').textContent = '00:00';
+            document.getElementById('countdown-status').textContent = '设置倒计时时间（秒）';
+        }
+
+        function updateCountdownDisplay() {
+            var m = Math.floor(countdownValue / 60);
+            var s = countdownValue % 60;
+            document.getElementById('countdown-display').textContent =
+                String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            document.getElementById('countdown-status').textContent = '倒计时进行中...';
         }
     </script>
 </body>
