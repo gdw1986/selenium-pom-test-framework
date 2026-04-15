@@ -1,9 +1,55 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Pytest
 .pytest_cache/
-results/
-results_parallel/
-allure-results/
-allure-report/
+.coverage
+htmlcov/
+.tox/
+
+# Selenium
+screenshots/
 *.log
+
+# Reports
+report.html
+assets/
+
+# WebDriver
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
