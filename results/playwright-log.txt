@@ -1,0 +1,962 @@
+{"level":30,"time":"2026-04-15T04:17:07.775Z","pid":48304,"hostname":"RTX-5060","msg":"Listening on 127.0.0.1:8697"}
+{"level":30,"time":"2026-04-15T04:17:08.025Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-04-15T04:17:08.231Z","pid":48304,"hostname":"RTX-5060","msg":"Adding browser to stack: chromium, version: 147.0.7727.15"}
+{"level":30,"time":"2026-04-15T04:17:08.231Z","pid":48304,"hostname":"RTX-5060","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-04-15T04:17:08.231Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-04-15T04:17:08.235Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method newContext"}
+{"level":30,"time":"2026-04-15T04:17:08.235Z","pid":48304,"hostname":"RTX-5060","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":true,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}}"}
+{"level":30,"time":"2026-04-15T04:17:08.235Z","pid":48304,"hostname":"RTX-5060","msg":"currentBrowser: {\"_contextStack\":[],\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@0d0ef80fedad991cf1b8f536a9cfc042\"},\"name\":\"chromium\",\"id\":\"browser=86f61d72-270c-4eb8-b0f2-54757b57753a\",\"headless\":false}"}
+{"level":30,"time":"2026-04-15T04:17:08.235Z","pid":48304,"hostname":"RTX-5060","msg":"Trace file: "}
+{"level":30,"time":"2026-04-15T04:17:08.243Z","pid":48304,"hostname":"RTX-5060","msg":"Setting default timeout for context context=b755a57f-242b-4880-8610-ec1d196e9b9f to 10000"}
+{"level":30,"time":"2026-04-15T04:17:08.243Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active context: context=b755a57f-242b-4880-8610-ec1d196e9b9f"}
+{"level":30,"time":"2026-04-15T04:17:08.243Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method newContext"}
+{"level":30,"time":"2026-04-15T04:17:08.245Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-04-15T04:17:08.245Z","pid":48304,"hostname":"RTX-5060","msg":"currentBrowser: {\"_contextStack\":[{\"id\":\"context=b755a57f-242b-4880-8610-ec1d196e9b9f\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@fd0e4b97b604e08c429785a174f82117\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":true,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}},\"traceFile\":\"\"}],\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@0d0ef80fedad991cf1b8f536a9cfc042\"},\"name\":\"chromium\",\"id\":\"browser=86f61d72-270c-4eb8-b0f2-54757b57753a\",\"headless\":false}"}
+{"level":30,"time":"2026-04-15T04:17:08.392Z","pid":48304,"hostname":"RTX-5060","msg":"Video path: undefined"}
+{"level":30,"time":"2026-04-15T04:17:08.392Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:08.452Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method newPage"}
+{"level":30,"time":"2026-04-15T04:17:08.457Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method handleAlert"}
+{"level":30,"time":"2026-04-15T04:17:08.458Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method handleAlert"}
+{"level":30,"time":"2026-04-15T04:17:08.460Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.490Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.492Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.492Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.494Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.494Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.496Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.496Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:08.502Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:08.516Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:08.519Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:08.519Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:08.534Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:08.537Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:08.537Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:08.546Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:08.548Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:08.548Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:08.554Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:08.556Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:08.556Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:08.655Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:08.657Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:08.657Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:09.514Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:09.517Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:09.517Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:09.520Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:09.522Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:09.539Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:09.541Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:09.541Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:09.547Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:09.550Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:09.550Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:09.554Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:09.556Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:09.556Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:09.560Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:09.562Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:09.562Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:09.803Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:09.805Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:09.805Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:10.611Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:10.614Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.615Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.617Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.618Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.620Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.620Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.622Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.622Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.624Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.624Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:10.628Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:10.643Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:10.645Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:10.645Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:10.653Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:10.656Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:10.656Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:10.659Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:10.661Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:10.661Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:10.664Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:10.666Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:10.666Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:10.902Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:10.904Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:10.904Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:11.722Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:11.724Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method hover"}
+{"level":30,"time":"2026-04-15T04:17:11.724Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:11.767Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method hover"}
+{"level":30,"time":"2026-04-15T04:17:12.172Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:12.172Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange .tooltip in page."}
+{"level":30,"time":"2026-04-15T04:17:12.195Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element button.btn-orange .tooltip containing 测试多窗口切换"}
+{"level":30,"time":"2026-04-15T04:17:12.196Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:12.198Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:12.214Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:12.218Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:12.218Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:12.226Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:12.228Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:12.228Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:12.232Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:12.234Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:12.234Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:12.243Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:12.245Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:12.246Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:12.271Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:12.274Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:12.274Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:13.101Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:13.104Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.105Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.106Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.107Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.109Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.109Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.110Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.110Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.112Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.112Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:13.116Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:13.130Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:13.135Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:13.135Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:13.143Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:13.145Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:13.145Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:13.152Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:13.154Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:13.154Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:13.159Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:13.160Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:13.160Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:13.404Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:13.406Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:13.406Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:14.211Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:14.214Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:14.214Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:14.217Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:14.217Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:14.705Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:17.709Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:17.709Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:17.712Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:17.725Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:17.727Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:17.727Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:17.733Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:17.734Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:17.734Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:17.739Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:17.741Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:17.741Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:17.745Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:17.746Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:17.747Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:17.772Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:17.774Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:17.774Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:18.580Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:18.582Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.585Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.586Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.586Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.587Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.587Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.588Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=812b7758-5659-4478-9852-a69e99ff92a3"}
+{"level":30,"time":"2026-04-15T04:17:18.588Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:18.591Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.591Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:18.595Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.596Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.596Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.598Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.598Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.599Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.599Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.600Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=515ce52c-8a0f-4dfe-9507-07dce8149bc8"}
+{"level":30,"time":"2026-04-15T04:17:18.600Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:18.624Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.624Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:18.629Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.630Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.630Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.633Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.633Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.634Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.634Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.635Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=65ee3818-3e22-4b91-b929-0a003ebbeb6e"}
+{"level":30,"time":"2026-04-15T04:17:18.635Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:18.654Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.654Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:18.659Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.660Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.660Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.663Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.663Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.664Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.664Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.665Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=2b58444c-63f8-4d23-8f14-93ed867d623d"}
+{"level":30,"time":"2026-04-15T04:17:18.665Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:18.686Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.686Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:18.691Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.693Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.693Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.696Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.696Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.697Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.697Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.698Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=9f963849-0dba-4f76-8aa2-e8a308884711"}
+{"level":30,"time":"2026-04-15T04:17:18.698Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:18.717Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.717Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:18.723Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:18.725Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.725Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.728Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.739Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.743Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.743Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.746Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.746Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.748Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.748Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:18.752Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:18.766Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:18.769Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:18.769Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:18.777Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:18.779Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:18.779Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:18.782Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:18.783Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:18.783Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:18.790Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:18.792Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:18.792Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:19.039Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:19.042Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:19.042Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:19.858Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:19.860Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:19.860Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:20.357Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:23.361Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.361Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.364Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.364Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.365Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5"}
+{"level":30,"time":"2026-04-15T04:17:23.365Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:23.377Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.377Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is disabled, return Locator: h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.383Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.385Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.385Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.395Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 4"}
+{"level":30,"time":"2026-04-15T04:17:23.395Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.397Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.397Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick*='alert'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.399Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.400Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.400Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick='window.close()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.402Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.404Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.404Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.405Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6"}
+{"level":30,"time":"2026-04-15T04:17:23.405Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:23.414Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.414Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is disabled, return Locator: h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.419Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.421Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.421Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.433Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 3"}
+{"level":30,"time":"2026-04-15T04:17:23.433Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.435Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.435Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick*='alert'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.436Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.438Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.438Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick='window.close()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.439Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.441Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.442Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.442Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=5d651e83-be55-48da-a1b6-ac72165bca04"}
+{"level":30,"time":"2026-04-15T04:17:23.442Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:23.451Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.451Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is disabled, return Locator: h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.457Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.460Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.460Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.469Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 2"}
+{"level":30,"time":"2026-04-15T04:17:23.469Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.471Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.471Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick*='alert'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.473Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.474Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.474Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick='window.close()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.478Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.481Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.481Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.482Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=2d227af6-43bc-4d7a-b084-480ff493c2f1"}
+{"level":30,"time":"2026-04-15T04:17:23.482Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:23.494Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.494Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is disabled, return Locator: h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.499Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElementCount"}
+{"level":30,"time":"2026-04-15T04:17:23.500Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.500Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:23.511Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 1"}
+{"level":30,"time":"2026-04-15T04:17:23.511Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:23.513Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.513Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick*='alert'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.515Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.516Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.516Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick='window.close()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:23.517Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getElement"}
+{"level":30,"time":"2026-04-15T04:17:23.519Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.519Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:23.520Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=4977aef3-7094-475e-8178-7a6c902a2938"}
+{"level":30,"time":"2026-04-15T04:17:23.520Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:23.531Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:23.546Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:23.548Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:23.548Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:23.557Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:23.559Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:23.559Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:23.562Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:23.564Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:23.564Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:23.567Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:23.569Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:23.569Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:23.607Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:23.609Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:23.609Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:24.427Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:24.429Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:24.441Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:24.444Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:24.444Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:24.450Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:24.451Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:24.451Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:24.457Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:24.459Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:24.459Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:24.462Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:24.464Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:24.464Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:24.707Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:24.710Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:24.710Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:25.524Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:25.526Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.528Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.529Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.529Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.530Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.530Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.531Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=22e28db7-7206-45f4-9d47-33d92e602cbf"}
+{"level":30,"time":"2026-04-15T04:17:25.531Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:25.537Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.537Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:25.541Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.544Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.544Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.547Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.547Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.548Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.548Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.549Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5"}
+{"level":30,"time":"2026-04-15T04:17:25.549Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:25.567Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.567Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:25.571Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.573Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.573Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.576Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.576Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.577Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.577Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.579Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6"}
+{"level":30,"time":"2026-04-15T04:17:25.579Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:25.598Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.598Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:25.602Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.603Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.603Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.606Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.606Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.608Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.608Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.609Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=5d651e83-be55-48da-a1b6-ac72165bca04"}
+{"level":30,"time":"2026-04-15T04:17:25.609Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:25.628Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.628Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:25.632Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.634Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.634Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.637Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.637Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.639Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.639Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.640Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=2d227af6-43bc-4d7a-b084-480ff493c2f1"}
+{"level":30,"time":"2026-04-15T04:17:25.640Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:25.659Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.659Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:25.663Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:25.665Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.665Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.667Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.682Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.685Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.685Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.687Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.687Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.690Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.690Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:25.695Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:25.710Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:25.712Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:25.712Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:25.719Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:25.721Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:25.721Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:25.725Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:25.727Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:25.727Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:25.731Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:25.732Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:25.732Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:25.975Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:25.977Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:25.977Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:26.792Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:26.794Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:26.794Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:27.303Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:30.308Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:30.308Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:30.310Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:30.310Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:30.311Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=805cf323-7ea9-4d66-8de2-e614fdaa3576"}
+{"level":30,"time":"2026-04-15T04:17:30.311Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:30.318Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:30.318Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick*='alert'] in page."}
+{"level":30,"time":"2026-04-15T04:17:30.361Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:30.866Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:30.878Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:30.881Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:30.892Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:30.894Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:30.894Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:30.899Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:30.901Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:30.901Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:30.904Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:30.906Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:30.906Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:30.910Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:30.912Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:30.912Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:30.942Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:30.944Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:30.944Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:31.765Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:31.768Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.770Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.771Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.771Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.772Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.772Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.772Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=ec049e82-b210-4baa-9877-909aa56f03df"}
+{"level":30,"time":"2026-04-15T04:17:31.772Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:31.779Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.779Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:31.783Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.785Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.785Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.789Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.789Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.790Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.790Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.791Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=1f8715ab-eaf5-4980-a420-a04179a5d834"}
+{"level":30,"time":"2026-04-15T04:17:31.791Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:31.812Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.812Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:31.817Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.818Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.818Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.821Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.821Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.822Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.822Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.824Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=eda60cd7-b71f-4c69-856f-8996799e3569"}
+{"level":30,"time":"2026-04-15T04:17:31.824Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:31.841Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.841Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:31.846Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.848Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.848Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.852Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.852Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.853Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.853Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.854Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=d88451a0-f683-4401-8a8e-6feb642f4ffe"}
+{"level":30,"time":"2026-04-15T04:17:31.854Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:31.870Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.870Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:31.874Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.876Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.876Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.879Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.879Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.880Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.880Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:31.897Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:31.900Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.918Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.928Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.928Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.931Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.931Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.933Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.933Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:31.937Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:31.951Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:31.953Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:31.953Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:31.962Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:31.964Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:31.964Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:31.968Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:31.969Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:31.969Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:31.976Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:31.978Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:31.978Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:32.010Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:32.013Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:32.013Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:32.835Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:32.837Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:32.837Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:33.345Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:36.349Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.349Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.351Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.351Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.352Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.352Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:36.353Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58"}
+{"level":30,"time":"2026-04-15T04:17:36.353Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:36.365Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:36.365Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button[onclick='window.close()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:36.396Z","pid":48304,"hostname":"RTX-5060","msg":"Removed page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58 from context=b755a57f-242b-4880-8610-ec1d196e9b9f page stack"}
+{"level":30,"time":"2026-04-15T04:17:36.396Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:37.400Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:37.400Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:37.402Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:37.416Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:37.418Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:37.418Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:37.424Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:37.426Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:37.426Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:37.431Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:37.433Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:37.433Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:37.437Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:37.438Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:37.438Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:37.478Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:37.480Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:37.480Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:38.285Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:38.288Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.290Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.291Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.291Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.291Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.291Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.292Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=35be7172-b6dd-4ab0-860b-0adbc3552f35"}
+{"level":30,"time":"2026-04-15T04:17:38.292Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:38.293Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.293Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:38.298Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.299Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.299Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.301Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.301Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.302Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.302Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.303Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=98f2c201-bd0a-4d1d-a84e-33a9c700e281"}
+{"level":30,"time":"2026-04-15T04:17:38.303Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:38.323Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.323Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:38.333Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.334Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.335Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.337Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.337Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.339Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.339Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.340Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=5270e809-eb56-44ba-ad81-31ff85630f3f"}
+{"level":30,"time":"2026-04-15T04:17:38.340Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:38.361Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.361Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:38.369Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.372Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.372Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.377Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.377Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.379Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.379Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.380Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=446b4032-c53c-4747-8e9b-0b7f1c25d0f2"}
+{"level":30,"time":"2026-04-15T04:17:38.380Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:38.398Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.398Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:38.403Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:38.404Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.404Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.408Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.422Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.426Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.426Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.428Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.428Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.430Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.430Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:38.435Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:38.449Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:38.451Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:38.451Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:38.457Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:38.458Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:38.458Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:38.464Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:38.466Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:38.466Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:38.470Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:38.471Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:38.471Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:38.711Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:38.713Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:38.713Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:39.524Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:39.527Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:39.527Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:40.015Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:43.018Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.019Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.022Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.022Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.023Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=f1e60d27-f312-4f89-b909-e8d955adf7d0"}
+{"level":30,"time":"2026-04-15T04:17:43.023Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:43.033Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.033Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:43.048Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 4"}
+{"level":30,"time":"2026-04-15T04:17:43.048Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.052Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.052Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.053Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=baf08732-a19c-48d3-b32c-b5c2930ea920"}
+{"level":30,"time":"2026-04-15T04:17:43.053Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:43.065Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.065Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:43.081Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 3"}
+{"level":30,"time":"2026-04-15T04:17:43.081Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.084Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.084Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.085Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=d5c033b8-e6a9-4539-924a-e13769d6252d"}
+{"level":30,"time":"2026-04-15T04:17:43.085Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:43.094Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.094Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:43.110Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 2"}
+{"level":30,"time":"2026-04-15T04:17:43.110Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.114Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.114Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.115Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=2f159acc-9b05-4241-a5cd-f10b22193895"}
+{"level":30,"time":"2026-04-15T04:17:43.115Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:43.123Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.123Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with h2 in page."}
+{"level":30,"time":"2026-04-15T04:17:43.138Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element h2 containing 🪟 窗口 1"}
+{"level":30,"time":"2026-04-15T04:17:43.138Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:43.142Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.142Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:43.143Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=4977aef3-7094-475e-8178-7a6c902a2938"}
+{"level":30,"time":"2026-04-15T04:17:43.143Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:43.154Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:43.169Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:43.171Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:43.171Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:43.179Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:43.182Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:43.182Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:43.186Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:43.188Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:43.188Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:43.192Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:43.194Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:43.194Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:43.229Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:43.231Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:43.231Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:44.036Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:44.039Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:44.051Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:44.054Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:44.054Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:44.060Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:44.063Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:44.063Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:44.066Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:44.068Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:44.068Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:44.071Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:44.073Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:44.073Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:44.313Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:44.315Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:44.315Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:45.131Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:45.133Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.135Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.136Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.136Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.137Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.137Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.138Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=44a13645-75bd-40a5-a9dc-d6fc1b710263"}
+{"level":30,"time":"2026-04-15T04:17:45.138Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:45.145Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.145Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:45.150Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.152Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.153Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.156Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.156Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.157Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.157Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.158Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=f1e60d27-f312-4f89-b909-e8d955adf7d0"}
+{"level":30,"time":"2026-04-15T04:17:45.158Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:45.180Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.180Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:45.186Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.188Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.188Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.190Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.190Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.191Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.191Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.192Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=baf08732-a19c-48d3-b32c-b5c2930ea920"}
+{"level":30,"time":"2026-04-15T04:17:45.192Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:45.217Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.217Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:45.227Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.228Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.228Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.232Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.232Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.233Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.233Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.234Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=d5c033b8-e6a9-4539-924a-e13769d6252d"}
+{"level":30,"time":"2026-04-15T04:17:45.234Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:45.263Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.263Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:45.271Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.273Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.273Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.276Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.276Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.281Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.281Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.284Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=2f159acc-9b05-4241-a5cd-f10b22193895"}
+{"level":30,"time":"2026-04-15T04:17:45.284Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:45.302Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.302Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:45.305Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:45.307Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.307Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.310Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.322Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.324Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.324Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.327Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.327Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.330Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.330Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:45.335Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:45.349Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:45.352Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:45.352Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:45.357Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:45.359Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:45.359Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:45.364Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:45.366Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:45.366Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:45.370Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:45.371Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:45.371Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:45.614Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:45.616Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:45.616Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:46.432Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:46.435Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:46.435Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with button.btn-orange[onclick='openFiveWindows()'] in page."}
+{"level":30,"time":"2026-04-15T04:17:46.916Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:49.919Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.919Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.922Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.922Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.923Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=b4fc2204-6e6e-4917-a643-1f55257b6642"}
+{"level":30,"time":"2026-04-15T04:17:49.923Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:49.934Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:49.934Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .info in page."}
+{"level":30,"time":"2026-04-15T04:17:49.948Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element .info containing 窗口编号: 4 | 颜色: #27ae60"}
+{"level":30,"time":"2026-04-15T04:17:49.948Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:49.952Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.952Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.953Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=c0687a7d-fe15-4499-bce8-1871165f1ed7"}
+{"level":30,"time":"2026-04-15T04:17:49.953Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:49.962Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:49.962Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .info in page."}
+{"level":30,"time":"2026-04-15T04:17:49.976Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element .info containing 窗口编号: 3 | 颜色: #e74c3c"}
+{"level":30,"time":"2026-04-15T04:17:49.976Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:49.980Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.980Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:49.981Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=7574ecd3-de23-409b-9a6d-e358e19b598b"}
+{"level":30,"time":"2026-04-15T04:17:49.982Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:49.992Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:49.992Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .info in page."}
+{"level":30,"time":"2026-04-15T04:17:50.006Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element .info containing 窗口编号: 2 | 颜色: #f5a623"}
+{"level":30,"time":"2026-04-15T04:17:50.006Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:50.011Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:50.011Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:50.012Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=9a0be92f-c978-41a6-80f9-725ff1ab03d3"}
+{"level":30,"time":"2026-04-15T04:17:50.012Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:50.023Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:50.023Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .info in page."}
+{"level":30,"time":"2026-04-15T04:17:50.038Z","pid":48304,"hostname":"RTX-5060","msg":"Retrieved text for element .info containing 窗口编号: 1 | 颜色: #667eea"}
+{"level":30,"time":"2026-04-15T04:17:50.038Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getText"}
+{"level":30,"time":"2026-04-15T04:17:50.043Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:50.043Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:50.044Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=4977aef3-7094-475e-8178-7a6c902a2938"}
+{"level":30,"time":"2026-04-15T04:17:50.044Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:50.056Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:50.070Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:50.073Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.073Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:50.080Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.082Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.082Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:50.086Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.087Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.087Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:50.091Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.092Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:50.092Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:50.131Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:50.134Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.134Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:50.947Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.950Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:50.965Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method goTo"}
+{"level":30,"time":"2026-04-15T04:17:50.967Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.967Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #login-page in page."}
+{"level":30,"time":"2026-04-15T04:17:50.973Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:50.974Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.974Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #username in page."}
+{"level":30,"time":"2026-04-15T04:17:50.978Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.980Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.980Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #password in page."}
+{"level":30,"time":"2026-04-15T04:17:50.986Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method fillText"}
+{"level":30,"time":"2026-04-15T04:17:50.988Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method click"}
+{"level":30,"time":"2026-04-15T04:17:50.988Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with .login-btn in page."}
+{"level":30,"time":"2026-04-15T04:17:51.232Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method click"}
+{"level":30,"time":"2026-04-15T04:17:51.234Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:51.234Z","pid":48304,"hostname":"RTX-5060","msg":"Strict mode is enabled, find Locator with #main-page in page."}
+{"level":30,"time":"2026-04-15T04:17:52.038Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-04-15T04:17:52.040Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.042Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.043Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.043Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.044Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.044Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.045Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=c20974a8-0db5-439e-95c6-731ddaf5d237"}
+{"level":30,"time":"2026-04-15T04:17:52.045Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:52.053Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.053Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:52.057Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.058Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.058Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.061Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.061Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.063Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.063Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.064Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=b4fc2204-6e6e-4917-a643-1f55257b6642"}
+{"level":30,"time":"2026-04-15T04:17:52.064Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:52.083Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.083Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:52.088Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.089Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.089Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.092Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.092Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.094Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.094Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.098Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=c0687a7d-fe15-4499-bce8-1871165f1ed7"}
+{"level":30,"time":"2026-04-15T04:17:52.098Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:52.116Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.117Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:52.121Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.123Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.123Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.126Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.126Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.128Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.128Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.129Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=7574ecd3-de23-409b-9a6d-e358e19b598b"}
+{"level":30,"time":"2026-04-15T04:17:52.130Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:52.148Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.148Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:52.153Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.155Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.155Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.157Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.157Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.158Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.158Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.159Z","pid":48304,"hostname":"RTX-5060","msg":"Changing current active page: page=9a0be92f-c978-41a6-80f9-725ff1ab03d3"}
+{"level":30,"time":"2026-04-15T04:17:52.159Z","pid":48304,"hostname":"RTX-5060","msg":"Changed active page"}
+{"level":30,"time":"2026-04-15T04:17:52.181Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.181Z","pid":48304,"hostname":"RTX-5060","msg":"Closing page with runBeforeUnload false"}
+{"level":30,"time":"2026-04-15T04:17:52.189Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closePage"}
+{"level":30,"time":"2026-04-15T04:17:52.190Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.190Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.196Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-04-15T04:17:52.218Z","pid":48304,"hostname":"RTX-5060","msg":"Removed page=b6f4144c-645a-4e1b-8374-fc2e6bfec117 from context=b755a57f-242b-4880-8610-ec1d196e9b9f page stack"}
+{"level":30,"time":"2026-04-15T04:17:52.406Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\index.js:8777:13)
+    at PlaywrightServer.getActiveBrowser (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\index.js:9689:52)
+    at PlaywrightServer.setTimeout (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\index.js:9887:56)
+    at Object.onReceiveHalfClose (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+=============================================================
+{"level":30,"time":"2026-04-15T04:17:52.409Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.409Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-04-15T04:17:52.449Z","pid":48304,"hostname":"RTX-5060","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2026-04-15T04:17:52.449Z","pid":48304,"hostname":"RTX-5060","msg":"End of node method closeAllBrowsers"}

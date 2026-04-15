@@ -1,0 +1,9 @@
+{
+  "login_page": "#login-page",
+  "main_page": "#main-page",
+  "username_input": "#username",
+  "password_input": "#password",
+  "login_button": ".login-btn",
+  "login_error": "#login-error",
+  "login_toast": "#login-toast"
+}

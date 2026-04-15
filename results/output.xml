@@ -1,0 +1,3867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.0 on win32)" generated="2026-04-15T12:17:07.279248" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Windows" source="C:\Users\david\.qclaw\workspace-agent-a9614b46\rf-playwright-test-framework\tests\test_windows.robot">
+<kw name="Open Browser To Test Page" owner="common" type="SETUP">
+<if>
+<branch type="IF" condition="${HEADLESS}">
+<kw name="Open Browser" owner="Browser">
+<arg>${TEST_URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${TRUE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:07.428579" elapsed="0.000039"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:07.428229" elapsed="0.000449"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="Browser">
+<msg time="2026-04-15T12:17:07.429070" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2026-04-15T12:17:07.429257" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\david\\.qclaw\\workspace-agent-a9614b46\\rf-playwright-test-framework\\results\\browser\\traces\\temp\\bb1a0a64-bbad-496a-a5b3-6d027c666878"}</msg>
+<msg time="2026-04-15T12:17:07.480833" level="INFO">Starting Browser process C:\Users\david\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:8697</msg>
+<msg time="2026-04-15T12:17:08.233752" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\david\\.qclaw\\workspace-agent-a9614b46\\rf-playwright-test-framework\\results\\browser\\traces\\temp\\bb1a0a64-bbad-496a-a5b3-6d027c666878"}</msg>
+<msg time="2026-04-15T12:17:08.234653" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2026-04-15T12:17:08.245224" level="INFO">Successfully created context. </msg>
+<msg time="2026-04-15T12:17:08.245322" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2026-04-15T12:17:08.454462" level="INFO">Successfully initialized new page object and opened url: http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2026-04-15T12:17:07.428776" elapsed="1.026078"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:07.428708" elapsed="1.026484"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:07.428210" elapsed="1.027044"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${DEFAULT_TIMEOUT}s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.455888" elapsed="0.000870"/>
+</kw>
+<kw name="Handle Future Dialogs" owner="Browser">
+<arg>action=accept</arg>
+<tag>PageContent</tag>
+<doc>Handle next dialog on page with ``action``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.456902" elapsed="0.003067"/>
+</kw>
+<doc>Launch browser and navigate to test page</doc>
+<status status="PASS" start="2026-04-15T12:17:07.428022" elapsed="1.032071"/>
+</kw>
+<test id="s1-t1" name="TC_Window_001 Open Windows Button Exists" line="13">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.492700" elapsed="0.001359"/>
+</kw>
+<msg time="2026-04-15T12:17:08.494166" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.492427" elapsed="0.001755"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:08.494437" elapsed="0.000042"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:08.494243" elapsed="0.000273"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:08.494227" elapsed="0.000317"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:08.495705" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.494602" elapsed="0.001125"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:08.496533" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:08.499235" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.496224" elapsed="0.003079"/>
+</kw>
+<msg time="2026-04-15T12:17:08.499421" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.496055" elapsed="0.003379"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:08.501194" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.499628" elapsed="0.001593"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:08.501562" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.501313" elapsed="0.000266"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:08.502007" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.501823" elapsed="0.000271"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:08.501656" elapsed="0.000485"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:08.501627" elapsed="0.000552"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:08.499482" elapsed="0.002718"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:08.499471" elapsed="0.002773"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:08.495967" elapsed="0.006293"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:08.495784" elapsed="0.006521"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:08.518161" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.502414" elapsed="0.015930"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:08.536042" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.518514" elapsed="0.017724"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:08.537032" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.536451" elapsed="0.011722"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:08.548894" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.548376" elapsed="0.007466"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:08.556512" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.556069" elapsed="0.101077"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:09.516488" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:08.657309" elapsed="0.859464"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:08.492133" elapsed="1.024826"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:09.521956" level="INFO">Locator found successfully.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:09.517190" elapsed="0.004867"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:09.540892" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.522531" elapsed="0.018530"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:09.549199" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.541252" elapsed="0.008166"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:09.550189" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.549619" elapsed="0.006790"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:09.556959" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.556573" elapsed="0.005540"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:09.562694" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.562311" elapsed="0.242587"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:10.613238" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:09.805069" elapsed="0.808304"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:09.522302" elapsed="1.091167"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:08.460249" elapsed="2.153272"/>
+</test>
+<test id="s1-t2" name="TC_Window_002 Open Windows Button Tooltip" line="16">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.620225" elapsed="0.001337"/>
+</kw>
+<msg time="2026-04-15T12:17:10.621677" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.619949" elapsed="0.001750"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:10.621957" elapsed="0.000034"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:10.621773" elapsed="0.000251"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:10.621752" elapsed="0.000300"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:10.623559" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.622126" elapsed="0.001473"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:10.624551" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:10.626716" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.624240" elapsed="0.002542"/>
+</kw>
+<msg time="2026-04-15T12:17:10.626846" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.624022" elapsed="0.002837"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:10.627915" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.627004" elapsed="0.000934"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:10.628254" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.628018" elapsed="0.000251"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:10.628543" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.628415" elapsed="0.000171"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:10.628317" elapsed="0.000293"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:10.628309" elapsed="0.000323"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:10.626904" elapsed="0.001745"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:10.626893" elapsed="0.001775"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:10.623911" elapsed="0.004771"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:10.623687" elapsed="0.005031"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:10.644483" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.628797" elapsed="0.015863"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:10.655317" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.644860" elapsed="0.010631"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:10.656198" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.655671" elapsed="0.005177"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:10.661317" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.660990" elapsed="0.004585"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:10.666110" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.665750" elapsed="0.238461"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:11.723648" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:10.904404" elapsed="0.819456"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:10.619659" elapsed="1.104311"/>
+</kw>
+<kw name="Hover" owner="Browser">
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:11.724110" elapsed="0.044965"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:12.170959" level="INFO">Slept 400 milliseconds.</msg>
+<arg>400ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:11.769252" elapsed="0.401841"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:12.197444" level="INFO">Text: '测试多窗口切换'</msg>
+<msg time="2026-04-15T12:17:12.197586" level="INFO">${tip} = 测试多窗口切换</msg>
+<var>${tip}</var>
+<arg>button.btn-orange .tooltip</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.171287" elapsed="0.026315"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${tip}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.197744" elapsed="0.000398"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:12.215532" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.198565" elapsed="0.017130"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:12.227880" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.215857" elapsed="0.012189"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:12.228648" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.228211" elapsed="0.005212"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:12.234159" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.233591" elapsed="0.011704"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:12.245931" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.245501" elapsed="0.028159"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:13.103191" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:12.273925" elapsed="0.829448"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:12.198343" elapsed="0.905128"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:10.617290" elapsed="2.486226"/>
+</test>
+<test id="s1-t3" name="TC_Window_003 Open Five Windows" line="22">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.109194" elapsed="0.001082"/>
+</kw>
+<msg time="2026-04-15T12:17:13.110381" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.108908" elapsed="0.001493"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:13.110649" elapsed="0.000041"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:13.110472" elapsed="0.000253"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:13.110454" elapsed="0.000300"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:13.111808" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.110812" elapsed="0.001021"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:13.112610" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:13.114272" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.112316" elapsed="0.002027"/>
+</kw>
+<msg time="2026-04-15T12:17:13.114425" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.112136" elapsed="0.002307"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:13.115547" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.114629" elapsed="0.000939"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:13.115887" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.115637" elapsed="0.000270"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:13.116181" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.116075" elapsed="0.000152"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:13.115965" elapsed="0.000293"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:13.115953" elapsed="0.000331"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:13.114501" elapsed="0.001796"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:13.114487" elapsed="0.001824"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:13.112040" elapsed="0.004284"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:13.111882" elapsed="0.004470"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:13.133126" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.116413" elapsed="0.016970"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:13.144875" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.133738" elapsed="0.011305"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:13.145672" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.145202" elapsed="0.008667"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:13.154634" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.154109" elapsed="0.006097"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:13.160696" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.160351" elapsed="0.245340"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:14.213325" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:13.405862" elapsed="0.807656"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:13.108659" elapsed="1.104982"/>
+</kw>
+<kw name="Count Pages" owner="common">
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:14.215778" level="INFO">@{page_ids} = [ page=4977aef3-7094-475e-8178-7a6c902a2938 ]</msg>
+<var>@{page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:14.214174" elapsed="0.001635"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:14.216355" level="INFO">Length is 1.</msg>
+<msg time="2026-04-15T12:17:14.216416" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:14.215961" elapsed="0.000471"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:14.216488" elapsed="0.000089"/>
+</return>
+<msg time="2026-04-15T12:17:14.216671" level="INFO">${init_count} = 1</msg>
+<var>${init_count}</var>
+<doc>Return number of open pages in current context</doc>
+<status status="PASS" start="2026-04-15T12:17:14.213847" elapsed="0.002839"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:14.217114" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:14.216800" elapsed="0.489917"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:17.707690" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:14.706978" elapsed="3.000827"/>
+</kw>
+<kw name="Count Pages" owner="common">
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:17.710430" level="INFO">@{page_ids} = [ page=812b7758-5659-4478-9852-a69e99ff92a3 | page=515ce52c-8a0f-4dfe-9507-07dce8149bc8 | page=65ee3818-3e22-4b91-b929-0a003ebbeb6e | page=2b58444c-63f8-4d23-8f14-93ed867d623d | page=9f963849-0dba-4f7...</msg>
+<var>@{page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.708396" elapsed="0.002061"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:17.710739" level="INFO">Length is 6.</msg>
+<msg time="2026-04-15T12:17:17.710775" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.710548" elapsed="0.000238"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:17.710820" elapsed="0.000059"/>
+</return>
+<msg time="2026-04-15T12:17:17.710958" level="INFO">${final_count} = 6</msg>
+<var>${final_count}</var>
+<doc>Return number of open pages in current context</doc>
+<status status="PASS" start="2026-04-15T12:17:17.708112" elapsed="0.002858"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:17.711242" level="INFO">${expected} = 6</msg>
+<var>${expected}</var>
+<arg>${init_count} + 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.711030" elapsed="0.000225"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${final_count}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.711313" elapsed="0.000183"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:17.726880" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.711765" elapsed="0.015291"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:17.734262" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.727239" elapsed="0.007128"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:17.734934" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.734489" elapsed="0.006451"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:17.741618" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.741125" elapsed="0.005545"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:17.747153" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.746818" elapsed="0.026867"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:18.581433" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:17.773913" elapsed="0.807672"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:17.711618" elapsed="0.870073"/>
+</kw>
+<msg time="2026-04-15T12:17:18.591736" level="INFO">Successfully changed active page: page=812b7758-5659-4478-9852-a69e99ff92a3</msg>
+<msg time="2026-04-15T12:17:18.596692" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:18.598800" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:18.624108" level="INFO">Successfully changed active page: page=515ce52c-8a0f-4dfe-9507-07dce8149bc8</msg>
+<msg time="2026-04-15T12:17:18.630365" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:18.633133" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:18.653826" level="INFO">Successfully changed active page: page=65ee3818-3e22-4b91-b929-0a003ebbeb6e</msg>
+<msg time="2026-04-15T12:17:18.660422" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:18.663171" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:18.686254" level="INFO">Successfully changed active page: page=2b58444c-63f8-4d23-8f14-93ed867d623d</msg>
+<msg time="2026-04-15T12:17:18.693277" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:18.696494" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:18.717337" level="INFO">Successfully changed active page: page=9f963849-0dba-4f76-8aa2-e8a308884711</msg>
+<msg time="2026-04-15T12:17:18.724599" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:18.728106" level="INFO">Returned active page id</msg>
+<status status="PASS" start="2026-04-15T12:17:13.106880" elapsed="5.474851"/>
+</test>
+<test id="s1-t4" name="TC_Window_004 Popup Window Content" line="30">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.742616" elapsed="0.002674"/>
+</kw>
+<msg time="2026-04-15T12:17:18.745446" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.742276" elapsed="0.003194"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:18.745764" elapsed="0.000043"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:18.745552" elapsed="0.000292"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:18.745530" elapsed="0.000346"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:18.747288" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.745940" elapsed="0.001374"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:18.748210" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:18.750159" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.747916" elapsed="0.002317"/>
+</kw>
+<msg time="2026-04-15T12:17:18.750311" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.747693" elapsed="0.002635"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:18.751583" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.750517" elapsed="0.001099"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:18.752058" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.751716" elapsed="0.000364"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:18.752536" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.752360" elapsed="0.000233"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:18.752144" elapsed="0.000485"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:18.752130" elapsed="0.000529"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:18.750390" elapsed="0.002287"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:18.750376" elapsed="0.002320"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:18.747583" elapsed="0.005125"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:18.747379" elapsed="0.005364"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:18.767827" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.752806" elapsed="0.015181"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:18.778347" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.768230" elapsed="0.010274"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:18.779176" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.778675" elapsed="0.004871"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:18.783984" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.783676" elapsed="0.008528"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:18.792888" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:18.792465" elapsed="0.248704"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:19.860140" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:19.041390" elapsed="0.818886"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:18.741920" elapsed="1.118437"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:19.860873" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:19.860504" elapsed="0.498545"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.360238" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:20.359281" elapsed="3.001066"/>
+</kw>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:23.362964" level="INFO">${page_ids} = ['page=22e28db7-7206-45f4-9d47-33d92e602cbf', 'page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5', 'page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6', 'page=5d651e83-be55-48da-a1b6-ac72165bca04', 'page=2d227af6-43bc...</msg>
+<var>${page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.360530" elapsed="0.002465"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.363321" level="INFO">${main_id} = page=22e28db7-7206-45f4-9d47-33d92e602cbf</msg>
+<var>${main_id}</var>
+<arg>${page_ids}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.363114" elapsed="0.000255"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.363658" level="INFO">Length is 6.</msg>
+<msg time="2026-04-15T12:17:23.363698" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.363451" elapsed="0.000257"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.364217" level="INFO">${page_id} = page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.364072" elapsed="0.000164"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:23.364918" level="INFO">Switching to page page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:23.373535" level="INFO">Successfully changed active page: page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.364581" elapsed="0.009123"/>
+</kw>
+<msg time="2026-04-15T12:17:23.373860" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.364323" elapsed="0.009558"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.374022" elapsed="0.000437"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:23.376179" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.374566" elapsed="0.001643"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.376312" elapsed="0.000294"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-04-15T12:17:23.384348" level="INFO">${h2_count} = 1</msg>
+<var>${h2_count}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.376688" elapsed="0.007699"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.384783" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${h2_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.384518" elapsed="0.000319"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.396837" level="INFO">Text: '🪟 窗口 4'</msg>
+<msg time="2026-04-15T12:17:23.396986" level="INFO">${title} = 🪟 窗口 4</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.384925" elapsed="0.012079"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.397153" elapsed="0.000372"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.400418" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick*='alert']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.397621" elapsed="0.002875"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.403323" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick='window.close()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.400594" elapsed="0.002799"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-04-15T12:17:23.363973" elapsed="0.039464"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.403851" level="INFO">${page_id} = page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.403680" elapsed="0.000191"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:23.404466" level="INFO">Switching to page page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:23.411481" level="INFO">Successfully changed active page: page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.404180" elapsed="0.007413"/>
+</kw>
+<msg time="2026-04-15T12:17:23.411716" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.403957" elapsed="0.007780"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.411850" elapsed="0.000355"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:23.413664" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.412299" elapsed="0.001392"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.413787" elapsed="0.000269"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-04-15T12:17:23.420942" level="INFO">${h2_count} = 1</msg>
+<var>${h2_count}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.414142" elapsed="0.006843"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.421345" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${h2_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.421110" elapsed="0.000269"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.434375" level="INFO">Text: '🪟 窗口 3'</msg>
+<msg time="2026-04-15T12:17:23.434534" level="INFO">${title} = 🪟 窗口 3</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.421444" elapsed="0.013110"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.434689" elapsed="0.000303"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.437876" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick*='alert']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.435070" elapsed="0.002895"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.441001" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick='window.close()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.438072" elapsed="0.003008"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-04-15T12:17:23.403568" elapsed="0.037560"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.441540" level="INFO">${page_id} = page=5d651e83-be55-48da-a1b6-ac72165bca04</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.441375" elapsed="0.000183"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:23.442127" level="INFO">Switching to page page=5d651e83-be55-48da-a1b6-ac72165bca04,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:23.448884" level="INFO">Successfully changed active page: page=5d651e83-be55-48da-a1b6-ac72165bca04</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.441839" elapsed="0.007132"/>
+</kw>
+<msg time="2026-04-15T12:17:23.449070" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.441636" elapsed="0.007452"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.449173" elapsed="0.000292"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:23.450751" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.449551" elapsed="0.001291"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.450939" elapsed="0.000357"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-04-15T12:17:23.459095" level="INFO">${h2_count} = 1</msg>
+<var>${h2_count}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.451380" elapsed="0.007761"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.459624" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${h2_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.459307" elapsed="0.000360"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.470912" level="INFO">Text: '🪟 窗口 2'</msg>
+<msg time="2026-04-15T12:17:23.471048" level="INFO">${title} = 🪟 窗口 2</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.459766" elapsed="0.011305"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.471213" elapsed="0.000324"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.474385" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick*='alert']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.471631" elapsed="0.002825"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.479452" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick='window.close()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.474540" elapsed="0.005009"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-04-15T12:17:23.441263" elapsed="0.038340"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.480073" level="INFO">${page_id} = page=2d227af6-43bc-4d7a-b084-480ff493c2f1</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.479884" elapsed="0.000210"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:23.480733" level="INFO">Switching to page page=2d227af6-43bc-4d7a-b084-480ff493c2f1,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:23.489692" level="INFO">Successfully changed active page: page=2d227af6-43bc-4d7a-b084-480ff493c2f1</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.480415" elapsed="0.009499"/>
+</kw>
+<msg time="2026-04-15T12:17:23.490086" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.480181" elapsed="0.009945"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.490334" elapsed="0.000410"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:23.493163" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.490845" elapsed="0.002347"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.493316" elapsed="0.000321"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-04-15T12:17:23.500307" level="INFO">${h2_count} = 1</msg>
+<var>${h2_count}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.493760" elapsed="0.006574"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.500647" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${h2_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.500435" elapsed="0.000247"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.512783" level="INFO">Text: '🪟 窗口 1'</msg>
+<msg time="2026-04-15T12:17:23.512935" level="INFO">${title} = 🪟 窗口 1</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.500749" elapsed="0.012210"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.513126" elapsed="0.000341"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.516366" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick*='alert']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.513551" elapsed="0.002877"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2026-04-15T12:17:23.518720" level="INFO">Locator found successfully.</msg>
+<arg>button[onclick='window.close()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2026-04-15T12:17:23.516506" elapsed="0.002282"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-04-15T12:17:23.479752" elapsed="0.039083"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:23.519206" level="INFO">${page_id} = page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.519057" elapsed="0.000176"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:23.519964" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:23.527422" level="INFO">Successfully changed active page: page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.519553" elapsed="0.008040"/>
+</kw>
+<msg time="2026-04-15T12:17:23.527749" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.519346" elapsed="0.008423"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.527921" elapsed="0.000412"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:23.530078" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.528437" elapsed="0.001667"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2026-04-15T12:17:23.530523" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.530191" elapsed="0.000421"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<var>${h2_count}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.530722" elapsed="0.000062"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${h2_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.530866" elapsed="0.000044"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.530976" elapsed="0.000036"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.531077" elapsed="0.000033"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<arg>button[onclick*='alert']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.531173" elapsed="0.000036"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<arg>button[onclick='window.close()']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:23.531273" elapsed="0.000030"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-04-15T12:17:23.518959" elapsed="0.012376"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:23.363760" elapsed="0.167623"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:23.547565" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.531467" elapsed="0.016268"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:23.558682" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.547894" elapsed="0.010970"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.559500" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.559055" elapsed="0.004960"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:23.564464" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.564149" elapsed="0.004779"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:23.569282" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.569052" elapsed="0.039685"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:24.428359" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:23.608944" elapsed="0.819601"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:24.443292" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.429063" elapsed="0.014402"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:24.451142" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.443679" elapsed="0.007571"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:24.451723" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.451384" elapsed="0.007147"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:24.459145" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.458706" elapsed="0.005155"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:24.464287" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.463998" elapsed="0.245524"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:25.525392" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:24.709734" elapsed="0.815825"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:24.428822" elapsed="1.096840"/>
+</kw>
+<msg time="2026-04-15T12:17:25.537147" level="INFO">Successfully changed active page: page=22e28db7-7206-45f4-9d47-33d92e602cbf</msg>
+<msg time="2026-04-15T12:17:25.543392" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:25.547336" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:25.567294" level="INFO">Successfully changed active page: page=d4370caa-d55a-4be0-9a0f-1c34f0ce3de5</msg>
+<msg time="2026-04-15T12:17:25.573137" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:25.576483" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:25.598521" level="INFO">Successfully changed active page: page=ae272a9c-8b7b-4048-aa8f-a7686c1095e6</msg>
+<msg time="2026-04-15T12:17:25.603211" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:25.606397" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:25.627430" level="INFO">Successfully changed active page: page=5d651e83-be55-48da-a1b6-ac72165bca04</msg>
+<msg time="2026-04-15T12:17:25.633900" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:25.636733" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:25.659204" level="INFO">Successfully changed active page: page=2d227af6-43bc-4d7a-b084-480ff493c2f1</msg>
+<msg time="2026-04-15T12:17:25.665020" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:25.667439" level="INFO">Returned active page id</msg>
+<status status="PASS" start="2026-04-15T12:17:18.728536" elapsed="6.797168"/>
+</test>
+<test id="s1-t5" name="TC_Window_005 Popup Window Alert" line="59">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.685045" elapsed="0.001496"/>
+</kw>
+<msg time="2026-04-15T12:17:25.686640" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.684761" elapsed="0.001901"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:25.687063" elapsed="0.000094"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:25.686733" elapsed="0.000481"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:25.686714" elapsed="0.000534"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:25.689071" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.687319" elapsed="0.001792"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:25.690728" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:25.693175" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.690218" elapsed="0.003043"/>
+</kw>
+<msg time="2026-04-15T12:17:25.693357" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.689897" elapsed="0.003475"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:25.694879" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.693600" elapsed="0.001303"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:25.695238" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.695003" elapsed="0.000250"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:25.695514" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.695388" elapsed="0.000172"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:25.695299" elapsed="0.000286"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:25.695289" elapsed="0.000325"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:25.693439" elapsed="0.002193"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:25.693419" elapsed="0.002234"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:25.689708" elapsed="0.005959"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:25.689207" elapsed="0.006496"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:25.711553" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.695790" elapsed="0.015963"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:25.721111" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.711956" elapsed="0.009277"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:25.721891" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.721412" elapsed="0.005672"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:25.727677" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.727259" elapsed="0.005073"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:25.732763" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.732450" elapsed="0.243965"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:26.793598" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:25.976649" elapsed="0.817119"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:25.684406" elapsed="1.109454"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:26.794464" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:26.793995" elapsed="0.512078"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:30.307396" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:27.306549" elapsed="3.000971"/>
+</kw>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:30.309712" level="INFO">${page_ids} = ['page=ec049e82-b210-4baa-9877-909aa56f03df', 'page=805cf323-7ea9-4d66-8de2-e614fdaa3576', 'page=1f8715ab-eaf5-4980-a420-a04179a5d834', 'page=eda60cd7-b71f-4c69-856f-8996799e3569', 'page=d88451a0-f683...</msg>
+<var>${page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.307691" elapsed="0.002053"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:30.310036" level="INFO">${popup_id} = page=805cf323-7ea9-4d66-8de2-e614fdaa3576</msg>
+<var>${popup_id}</var>
+<arg>${page_ids}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.309852" elapsed="0.000205"/>
+</kw>
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:30.310485" level="INFO">Switching to page page=805cf323-7ea9-4d66-8de2-e614fdaa3576,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:30.318009" level="INFO">Successfully changed active page: page=805cf323-7ea9-4d66-8de2-e614fdaa3576</msg>
+<arg>${popup_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.310139" elapsed="0.007955"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:30.318486" level="INFO">Clicks the element 'button[onclick*='alert']'.</msg>
+<arg>button[onclick*='alert']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.318206" elapsed="0.045975"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:30.865209" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.364409" elapsed="0.500911"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:30.879863" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.865494" elapsed="0.014508"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:30.893569" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.880609" elapsed="0.013143"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:30.900997" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.893942" elapsed="0.007166"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:30.901620" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.901262" elapsed="0.004452"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:30.906398" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.905890" elapsed="0.006294"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:30.912730" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.912367" elapsed="0.031570"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:31.767065" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:30.944136" elapsed="0.823105"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:30.880306" elapsed="0.887046"/>
+</kw>
+<msg time="2026-04-15T12:17:31.779021" level="INFO">Successfully changed active page: page=ec049e82-b210-4baa-9877-909aa56f03df</msg>
+<msg time="2026-04-15T12:17:31.785181" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:31.788658" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:31.812643" level="INFO">Successfully changed active page: page=1f8715ab-eaf5-4980-a420-a04179a5d834</msg>
+<msg time="2026-04-15T12:17:31.818316" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:31.821157" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:31.840962" level="INFO">Successfully changed active page: page=eda60cd7-b71f-4c69-856f-8996799e3569</msg>
+<msg time="2026-04-15T12:17:31.848327" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:31.851900" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:31.869886" level="INFO">Successfully changed active page: page=d88451a0-f683-4401-8a8e-6feb642f4ffe</msg>
+<msg time="2026-04-15T12:17:31.875777" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:31.879253" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:31.880386" level="INFO">Closing current active page.</msg>
+<msg time="2026-04-15T12:17:31.898984" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<status status="PASS" start="2026-04-15T12:17:25.667782" elapsed="6.099613"/>
+</test>
+<test id="s1-t6" name="TC_Window_006 Close Popup Window" line="69">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.920933" elapsed="0.008821"/>
+</kw>
+<msg time="2026-04-15T12:17:31.930007" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.920513" elapsed="0.009524"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:31.930383" elapsed="0.000046"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:31.930132" elapsed="0.000331"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:31.930107" elapsed="0.000388"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:31.932254" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.930561" elapsed="0.001719"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:31.933294" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:31.935467" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.933034" elapsed="0.002500"/>
+</kw>
+<msg time="2026-04-15T12:17:31.935607" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.932816" elapsed="0.002804"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:31.936804" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.935797" elapsed="0.001033"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:31.937154" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.936918" elapsed="0.000252"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:31.937419" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.937312" elapsed="0.000146"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:31.937214" elapsed="0.000269"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:31.937205" elapsed="0.000300"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:31.935676" elapsed="0.001841"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:31.935662" elapsed="0.001869"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:31.932667" elapsed="0.004873"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:31.932331" elapsed="0.005238"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:31.952544" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.937634" elapsed="0.015099"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:31.963350" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.952894" elapsed="0.010634"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:31.964206" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.963719" elapsed="0.005551"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:31.969827" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.969422" elapsed="0.008741"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:31.978789" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:31.978368" elapsed="0.034014"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:32.836657" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:32.012586" elapsed="0.824207"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:31.920115" elapsed="0.916758"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:32.837405" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:32.837007" elapsed="0.510289"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:36.348289" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:33.347501" elapsed="3.000900"/>
+</kw>
+<kw name="Count Pages" owner="common">
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:36.350760" level="INFO">@{page_ids} = [ page=35be7172-b6dd-4ab0-860b-0adbc3552f35 | page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58 | page=98f2c201-bd0a-4d1d-a84e-33a9c700e281 | page=5270e809-eb56-44ba-ad81-31ff85630f3f | page=446b4032-c53c-474...</msg>
+<var>@{page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.348858" elapsed="0.001924"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:36.351056" level="INFO">Length is 6.</msg>
+<msg time="2026-04-15T12:17:36.351091" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.350862" elapsed="0.000240"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:36.351134" elapsed="0.000049"/>
+</return>
+<msg time="2026-04-15T12:17:36.351249" level="INFO">${before} = 6</msg>
+<var>${before}</var>
+<doc>Return number of open pages in current context</doc>
+<status status="PASS" start="2026-04-15T12:17:36.348607" elapsed="0.002653"/>
+</kw>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:36.352385" level="INFO">${page_ids} = ['page=35be7172-b6dd-4ab0-860b-0adbc3552f35', 'page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58', 'page=98f2c201-bd0a-4d1d-a84e-33a9c700e281', 'page=5270e809-eb56-44ba-ad81-31ff85630f3f', 'page=446b4032-c53c...</msg>
+<var>${page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.351318" elapsed="0.001089"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:36.352611" level="INFO">${popup_id} = page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58</msg>
+<var>${popup_id}</var>
+<arg>${page_ids}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.352484" elapsed="0.000141"/>
+</kw>
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:36.352939" level="INFO">Switching to page page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:36.361476" level="INFO">Successfully changed active page: page=9fcfd00e-1aec-4917-81ae-ccfdf186fa58</msg>
+<arg>${popup_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.352683" elapsed="0.009027"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:36.363945" level="INFO">Clicks the element 'button[onclick='window.close()']'.</msg>
+<arg>button[onclick='window.close()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.362191" elapsed="0.036040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:37.398960" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:36.398456" elapsed="1.000621"/>
+</kw>
+<kw name="Count Pages" owner="common">
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:37.401380" level="INFO">@{page_ids} = [ page=35be7172-b6dd-4ab0-860b-0adbc3552f35 | page=98f2c201-bd0a-4d1d-a84e-33a9c700e281 | page=5270e809-eb56-44ba-ad81-31ff85630f3f | page=446b4032-c53c-4747-8e9b-0b7f1c25d0f2 | page=4977aef3-7094-475...</msg>
+<var>@{page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.399564" elapsed="0.001842"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:37.401691" level="INFO">Length is 5.</msg>
+<msg time="2026-04-15T12:17:37.401728" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.401500" elapsed="0.000239"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:37.401777" elapsed="0.000052"/>
+</return>
+<msg time="2026-04-15T12:17:37.401900" level="INFO">${after} = 5</msg>
+<var>${after}</var>
+<doc>Return number of open pages in current context</doc>
+<status status="PASS" start="2026-04-15T12:17:37.399310" elapsed="0.002602"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:37.402218" level="INFO">${expected} = 5</msg>
+<var>${expected}</var>
+<arg>${before} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.401981" elapsed="0.000255"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${after}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.402307" elapsed="0.000177"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:37.417808" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.402788" elapsed="0.015170"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:37.425961" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.418117" elapsed="0.008005"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:37.426737" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.426269" elapsed="0.006513"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:37.433509" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.433027" elapsed="0.005318"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:37.438866" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.438503" elapsed="0.041230"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:38.287075" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:37.479948" elapsed="0.807261"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:37.402639" elapsed="0.884670"/>
+</kw>
+<msg time="2026-04-15T12:17:38.294060" level="INFO">Successfully changed active page: page=35be7172-b6dd-4ab0-860b-0adbc3552f35</msg>
+<msg time="2026-04-15T12:17:38.299303" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:38.301831" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:38.323301" level="INFO">Successfully changed active page: page=98f2c201-bd0a-4d1d-a84e-33a9c700e281</msg>
+<msg time="2026-04-15T12:17:38.334770" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:38.337812" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:38.360906" level="INFO">Successfully changed active page: page=5270e809-eb56-44ba-ad81-31ff85630f3f</msg>
+<msg time="2026-04-15T12:17:38.371228" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:38.376401" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:38.398548" level="INFO">Successfully changed active page: page=446b4032-c53c-4747-8e9b-0b7f1c25d0f2</msg>
+<msg time="2026-04-15T12:17:38.404812" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:38.407158" level="INFO">Returned active page id</msg>
+<status status="PASS" start="2026-04-15T12:17:31.899393" elapsed="6.387960"/>
+</test>
+<test id="s1-t7" name="TC_Window_007 Switch Between Windows" line="82">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.425863" elapsed="0.001874"/>
+</kw>
+<msg time="2026-04-15T12:17:38.427893" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.425549" elapsed="0.002382"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:38.428232" elapsed="0.000040"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:38.428022" elapsed="0.000284"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:38.428000" elapsed="0.000335"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:38.429760" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.428396" elapsed="0.001387"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:38.430728" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:38.433119" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.430322" elapsed="0.002877"/>
+</kw>
+<msg time="2026-04-15T12:17:38.433291" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.430137" elapsed="0.003171"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:38.434561" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.433515" elapsed="0.001067"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:38.434943" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.434667" elapsed="0.000296"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:38.435252" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.435121" elapsed="0.000183"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:38.435018" elapsed="0.000338"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:38.435008" elapsed="0.000380"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:38.433371" elapsed="0.002033"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:38.433354" elapsed="0.002070"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:38.430039" elapsed="0.005398"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:38.429837" elapsed="0.005635"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:38.450704" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.435549" elapsed="0.015319"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:38.458192" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.451027" elapsed="0.007289"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:38.458892" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.458479" elapsed="0.007585"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:38.466765" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.466279" elapsed="0.005082"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:38.471728" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.471477" elapsed="0.241364"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:39.526428" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:38.713056" elapsed="0.813554"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:38.424899" elapsed="1.101812"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:39.527239" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:39.526842" elapsed="0.490273"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:43.018116" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:40.017330" elapsed="3.000893"/>
+</kw>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:43.020916" level="INFO">${page_ids} = ['page=44a13645-75bd-40a5-a9dc-d6fc1b710263', 'page=f1e60d27-f312-4f89-b909-e8d955adf7d0', 'page=baf08732-a19c-48d3-b32c-b5c2930ea920', 'page=d5c033b8-e6a9-4539-924a-e13769d6252d', 'page=2f159acc-9b05...</msg>
+<var>${page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.018375" elapsed="0.002567"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.021252" level="INFO">${main_id} = page=44a13645-75bd-40a5-a9dc-d6fc1b710263</msg>
+<var>${main_id}</var>
+<arg>${page_ids}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.021055" elapsed="0.000218"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:43.021569" level="INFO">Length is 6.</msg>
+<msg time="2026-04-15T12:17:43.021617" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.021352" elapsed="0.000281"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.022114" level="INFO">${page_id} = page=f1e60d27-f312-4f89-b909-e8d955adf7d0</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.021975" elapsed="0.000213"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:43.023060" level="INFO">Switching to page page=f1e60d27-f312-4f89-b909-e8d955adf7d0,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:43.030145" level="INFO">Successfully changed active page: page=f1e60d27-f312-4f89-b909-e8d955adf7d0</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.022792" elapsed="0.007506"/>
+</kw>
+<msg time="2026-04-15T12:17:43.030430" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.022416" elapsed="0.008030"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.030600" elapsed="0.000351"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:43.032957" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.031059" elapsed="0.001929"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.033097" elapsed="0.000346"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.050284" level="INFO">Text: '🪟 窗口 4'</msg>
+<msg time="2026-04-15T12:17:43.050446" level="INFO">${title} = 🪟 窗口 4</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.033546" elapsed="0.016925"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.050659" elapsed="0.000400"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-04-15T12:17:43.021891" elapsed="0.029247"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.051561" level="INFO">${page_id} = page=baf08732-a19c-48d3-b32c-b5c2930ea920</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.051384" elapsed="0.000196"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:43.052396" level="INFO">Switching to page page=baf08732-a19c-48d3-b32c-b5c2930ea920,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:43.060253" level="INFO">Successfully changed active page: page=baf08732-a19c-48d3-b32c-b5c2930ea920</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.051951" elapsed="0.008542"/>
+</kw>
+<msg time="2026-04-15T12:17:43.060655" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.051666" elapsed="0.009011"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.060807" elapsed="0.000807"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:43.064440" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.061773" elapsed="0.002693"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.064593" elapsed="0.000352"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.082492" level="INFO">Text: '🪟 窗口 3'</msg>
+<msg time="2026-04-15T12:17:43.082624" level="INFO">${title} = 🪟 窗口 3</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.065071" elapsed="0.017570"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.082899" elapsed="0.000392"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-04-15T12:17:43.051263" elapsed="0.032073"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.083665" level="INFO">${page_id} = page=d5c033b8-e6a9-4539-924a-e13769d6252d</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.083541" elapsed="0.000137"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:43.084156" level="INFO">Switching to page page=d5c033b8-e6a9-4539-924a-e13769d6252d,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:43.090127" level="INFO">Successfully changed active page: page=d5c033b8-e6a9-4539-924a-e13769d6252d</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.083910" elapsed="0.006301"/>
+</kw>
+<msg time="2026-04-15T12:17:43.090313" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.083749" elapsed="0.006581"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.090427" elapsed="0.000324"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:43.092800" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.090953" elapsed="0.001925"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.093483" elapsed="0.000585"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.112426" level="INFO">Text: '🪟 窗口 2'</msg>
+<msg time="2026-04-15T12:17:43.112591" level="INFO">${title} = 🪟 窗口 2</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.094188" elapsed="0.018430"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.112945" elapsed="0.000435"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-04-15T12:17:43.083434" elapsed="0.029998"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.113805" level="INFO">${page_id} = page=2f159acc-9b05-4241-a5cd-f10b22193895</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.113655" elapsed="0.000167"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:43.114431" level="INFO">Switching to page page=2f159acc-9b05-4241-a5cd-f10b22193895,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:43.120930" level="INFO">Successfully changed active page: page=2f159acc-9b05-4241-a5cd-f10b22193895</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.114104" elapsed="0.006961"/>
+</kw>
+<msg time="2026-04-15T12:17:43.121178" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.113902" elapsed="0.007289"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.121296" elapsed="0.000383"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:43.123122" level="INFO">${url} = about:blank</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.121783" elapsed="0.001365"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.123248" elapsed="0.000270"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.140313" level="INFO">Text: '🪟 窗口 1'</msg>
+<msg time="2026-04-15T12:17:43.140466" level="INFO">${title} = 🪟 窗口 1</msg>
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.123810" elapsed="0.016680"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.140658" elapsed="0.000361"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-04-15T12:17:43.113548" elapsed="0.027517"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:43.141427" level="INFO">${page_id} = page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<var>${page_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.141276" elapsed="0.000170"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:43.142130" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:43.151620" level="INFO">Successfully changed active page: page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<arg>${page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.141743" elapsed="0.010069"/>
+</kw>
+<msg time="2026-04-15T12:17:43.151942" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>Switch Page</arg>
+<arg>${page_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.141531" elapsed="0.010425"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${alive}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.152059" elapsed="0.000347"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:43.153787" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.152491" elapsed="0.001318"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2026-04-15T12:17:43.154100" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.153887" elapsed="0.000258"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${title}</var>
+<arg>h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:43.154206" elapsed="0.000034"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>窗口</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:43.154290" elapsed="0.000036"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-04-15T12:17:43.141178" elapsed="0.013169"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:43.021687" elapsed="0.132694"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:43.170561" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.154443" elapsed="0.016274"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:43.181253" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.170882" elapsed="0.010564"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.182020" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.181607" elapsed="0.005997"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:43.188225" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.187765" elapsed="0.006290"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:43.194668" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.194265" elapsed="0.036990"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:44.038110" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:43.231469" elapsed="0.806798"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:44.053121" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.038786" elapsed="0.014510"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:44.062360" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.053470" elapsed="0.009078"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:44.063154" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.062740" elapsed="0.005422"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:44.068777" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.068317" elapsed="0.004707"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:44.073397" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.073134" elapsed="0.241777"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:45.132667" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:44.315139" elapsed="0.817698"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:44.038536" elapsed="1.094386"/>
+</kw>
+<msg time="2026-04-15T12:17:45.144747" level="INFO">Successfully changed active page: page=44a13645-75bd-40a5-a9dc-d6fc1b710263</msg>
+<msg time="2026-04-15T12:17:45.151765" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:45.156365" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:45.180226" level="INFO">Successfully changed active page: page=f1e60d27-f312-4f89-b909-e8d955adf7d0</msg>
+<msg time="2026-04-15T12:17:45.187849" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:45.190753" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:45.217504" level="INFO">Successfully changed active page: page=baf08732-a19c-48d3-b32c-b5c2930ea920</msg>
+<msg time="2026-04-15T12:17:45.228441" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:45.232214" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:45.262489" level="INFO">Successfully changed active page: page=d5c033b8-e6a9-4539-924a-e13769d6252d</msg>
+<msg time="2026-04-15T12:17:45.272762" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:45.275942" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:45.302143" level="INFO">Successfully changed active page: page=2f159acc-9b05-4241-a5cd-f10b22193895</msg>
+<msg time="2026-04-15T12:17:45.307131" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:45.309448" level="INFO">Returned active page id</msg>
+<status status="PASS" start="2026-04-15T12:17:38.408036" elapsed="6.724920"/>
+</test>
+<test id="s1-t8" name="TC_Window_008 Popup Window Info" line="104">
+<kw name="Login And Go To Main Page" owner="common" type="SETUP">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Page Ids" owner="Browser">
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.324569" elapsed="0.001430"/>
+</kw>
+<msg time="2026-04-15T12:17:45.326108" level="INFO">${has_page} = True</msg>
+<var>${has_page}</var>
+<arg>Get Page Ids</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.324266" elapsed="0.001906"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${has_page}">
+<kw name="New Page" owner="Browser">
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:45.327058" elapsed="0.000085"/>
+</kw>
+<status status="NOT RUN" start="2026-04-15T12:17:45.326344" elapsed="0.000861"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:45.326296" elapsed="0.000946"/>
+</if>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:45.329130" level="INFO">${ids} = ['page=4977aef3-7094-475e-8178-7a6c902a2938']</msg>
+<var>${ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.327437" elapsed="0.001723"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:45.330116" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:45.332382" level="INFO">Returned active page id</msg>
+<arg>${id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.329790" elapsed="0.002672"/>
+</kw>
+<msg time="2026-04-15T12:17:45.332555" level="INFO">${switched} = True</msg>
+<var>${switched}</var>
+<arg>Switch Page</arg>
+<arg>${id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.329564" elapsed="0.003010"/>
+</kw>
+<if>
+<branch type="IF" condition="${switched}">
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:45.333837" level="INFO">${url} = http://localhost:8080/test_page.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.332788" elapsed="0.001075"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:45.334244" level="INFO">${is_main} = True</msg>
+<var>${is_main}</var>
+<arg>'test_page' in '''${url}'''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.333961" elapsed="0.000303"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_main}">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-04-15T12:17:45.334563" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.334449" elapsed="0.000161"/>
+</kw>
+<status status="PASS" start="2026-04-15T12:17:45.334326" elapsed="0.000316"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:45.334313" elapsed="0.000359"/>
+</if>
+<status status="PASS" start="2026-04-15T12:17:45.332644" elapsed="0.002044"/>
+</branch>
+<status status="PASS" start="2026-04-15T12:17:45.332626" elapsed="0.002081"/>
+</if>
+<var name="${id}">page=4977aef3-7094-475e-8178-7a6c902a2938</var>
+<status status="PASS" start="2026-04-15T12:17:45.329436" elapsed="0.005281"/>
+</iter>
+<var>${id}</var>
+<value>@{ids}</value>
+<status status="PASS" start="2026-04-15T12:17:45.329222" elapsed="0.005524"/>
+</for>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:45.351089" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.334810" elapsed="0.016473"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:45.359022" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.351468" elapsed="0.007662"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:45.359747" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.359261" elapsed="0.006419"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:45.366380" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.365892" elapsed="0.005432"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:45.371854" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.371457" elapsed="0.244211"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:46.434059" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:45.615862" elapsed="0.818403"/>
+</kw>
+<doc>Navigate to test page, login, ensure main page is shown</doc>
+<status status="PASS" start="2026-04-15T12:17:45.323901" elapsed="1.110489"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:46.434988" level="INFO">Clicks the element 'button.btn-orange[onclick='openFiveWindows()']'.</msg>
+<arg>button.btn-orange[onclick='openFiveWindows()']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:46.434541" elapsed="0.483183"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.918511" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T12:17:46.917964" elapsed="3.000687"/>
+</kw>
+<kw name="Get Page Ids" owner="Browser">
+<msg time="2026-04-15T12:17:49.920829" level="INFO">${page_ids} = ['page=c20974a8-0db5-439e-95c6-731ddaf5d237', 'page=b4fc2204-6e6e-4917-a643-1f55257b6642', 'page=c0687a7d-fe15-4499-bce8-1871165f1ed7', 'page=7574ecd3-de23-409b-9a6d-e358e19b598b', 'page=9a0be92f-c978...</msg>
+<var>${page_ids}</var>
+<tag>Assertion</tag>
+<tag>BrowserControl</tag>
+<tag>Getter</tag>
+<doc>Returns a list of page ids based on the context and browser selection.
+See `Browser, Context and Page` for more information about Page and related concepts.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.918840" elapsed="0.002021"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.921250" level="INFO">Length is 6.</msg>
+<msg time="2026-04-15T12:17:49.921291" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${page_ids}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.920982" elapsed="0.000320"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.921644" level="INFO">${found} = 0</msg>
+<var>${found}</var>
+<arg>${0}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.921368" elapsed="0.000295"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:49.922273" level="INFO">${p_id} = page=b4fc2204-6e6e-4917-a643-1f55257b6642</msg>
+<var>${p_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.922083" elapsed="0.000207"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:49.922827" level="INFO">Switching to page page=b4fc2204-6e6e-4917-a643-1f55257b6642,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:49.930162" level="INFO">Successfully changed active page: page=b4fc2204-6e6e-4917-a643-1f55257b6642</msg>
+<arg>${p_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.922559" elapsed="0.007771"/>
+</kw>
+<msg time="2026-04-15T12:17:49.930466" level="INFO">${sw} = True</msg>
+<var>${sw}</var>
+<arg>Switch Page</arg>
+<arg>${p_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.922378" elapsed="0.008133"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${sw}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.930697" elapsed="0.000648"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:49.933205" level="INFO">${u} = about:blank</msg>
+<var>${u}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.931472" elapsed="0.001761"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${u}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.933349" elapsed="0.000414"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.934315" level="INFO">${found} = 1</msg>
+<var>${found}</var>
+<arg>${found} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.933951" elapsed="0.000389"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:49.949604" level="INFO">Text: '窗口编号: 4 | 颜色: #27ae60'</msg>
+<msg time="2026-04-15T12:17:49.949728" level="INFO">${inf} = 窗口编号: 4 | 颜色: #27ae60</msg>
+<var>${inf}</var>
+<arg>.info</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.934461" elapsed="0.015283"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.950306" level="INFO">${nm} = ['4', '27', '60']</msg>
+<var>${nm}</var>
+<arg>re.findall(r'\\d+', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.949881" elapsed="0.000442"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:49.950511" level="INFO">${n} = 4</msg>
+<var>${n}</var>
+<arg>${nm}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.950390" elapsed="0.000134"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.950786" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>1 &lt;= int(${n}) &lt;= 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.950583" elapsed="0.000215"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.950849" elapsed="0.000121"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.951351" level="INFO">${cl} = ['#27ae60']</msg>
+<var>${cl}</var>
+<arg>re.findall(r'\#[0-9a-fA-F]{6}', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.951017" elapsed="0.000359"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.951644" level="INFO">Length is 1.</msg>
+<arg>${cl}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.951450" elapsed="0.000217"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-04-15T12:17:49.921929" elapsed="0.029776"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:49.951991" level="INFO">${p_id} = page=c0687a7d-fe15-4499-bce8-1871165f1ed7</msg>
+<var>${p_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.951877" elapsed="0.000176"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:49.952671" level="INFO">Switching to page page=c0687a7d-fe15-4499-bce8-1871165f1ed7,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:49.958878" level="INFO">Successfully changed active page: page=c0687a7d-fe15-4499-bce8-1871165f1ed7</msg>
+<arg>${p_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.952386" elapsed="0.006578"/>
+</kw>
+<msg time="2026-04-15T12:17:49.959060" level="INFO">${sw} = True</msg>
+<var>${sw}</var>
+<arg>Switch Page</arg>
+<arg>${p_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.952170" elapsed="0.006907"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${sw}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.959175" elapsed="0.000270"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:49.960657" level="INFO">${u} = about:blank</msg>
+<var>${u}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.959526" elapsed="0.001155"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${u}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.960773" elapsed="0.000741"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.962184" level="INFO">${found} = 2</msg>
+<var>${found}</var>
+<arg>${found} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.961624" elapsed="0.000596"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:49.977470" level="INFO">Text: '窗口编号: 3 | 颜色: #e74c3c'</msg>
+<msg time="2026-04-15T12:17:49.977661" level="INFO">${inf} = 窗口编号: 3 | 颜色: #e74c3c</msg>
+<var>${inf}</var>
+<arg>.info</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.962315" elapsed="0.015385"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.978368" level="INFO">${nm} = ['3', '74', '3']</msg>
+<var>${nm}</var>
+<arg>re.findall(r'\\d+', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.977892" elapsed="0.000498"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:49.978623" level="INFO">${n} = 3</msg>
+<var>${n}</var>
+<arg>${nm}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.978486" elapsed="0.000150"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.978910" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>1 &lt;= int(${n}) &lt;= 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.978692" elapsed="0.000232"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.978976" elapsed="0.000149"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.979379" level="INFO">${cl} = ['#e74c3c']</msg>
+<var>${cl}</var>
+<arg>re.findall(r'\#[0-9a-fA-F]{6}', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.979182" elapsed="0.000211"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.979635" level="INFO">Length is 1.</msg>
+<arg>${cl}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.979445" elapsed="0.000221"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-04-15T12:17:49.951811" elapsed="0.027885"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:49.980014" level="INFO">${p_id} = page=7574ecd3-de23-409b-9a6d-e358e19b598b</msg>
+<var>${p_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.979884" elapsed="0.000147"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:49.980635" level="INFO">Switching to page page=7574ecd3-de23-409b-9a6d-e358e19b598b,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:49.989379" level="INFO">Successfully changed active page: page=7574ecd3-de23-409b-9a6d-e358e19b598b</msg>
+<arg>${p_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.980324" elapsed="0.009210"/>
+</kw>
+<msg time="2026-04-15T12:17:49.989674" level="INFO">${sw} = True</msg>
+<var>${sw}</var>
+<arg>Switch Page</arg>
+<arg>${p_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.980106" elapsed="0.009585"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${sw}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.989812" elapsed="0.000404"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:49.991702" level="INFO">${u} = about:blank</msg>
+<var>${u}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.990322" elapsed="0.001406"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${u}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.991824" elapsed="0.000237"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:49.992367" level="INFO">${found} = 3</msg>
+<var>${found}</var>
+<arg>${found} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.992121" elapsed="0.000279"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.008073" level="INFO">Text: '窗口编号: 2 | 颜色: #f5a623'</msg>
+<msg time="2026-04-15T12:17:50.008228" level="INFO">${inf} = 窗口编号: 2 | 颜色: #f5a623</msg>
+<var>${inf}</var>
+<arg>.info</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:49.992499" elapsed="0.015752"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.008886" level="INFO">${nm} = ['2', '5', '623']</msg>
+<var>${nm}</var>
+<arg>re.findall(r'\\d+', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.008425" elapsed="0.000483"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:50.009169" level="INFO">${n} = 2</msg>
+<var>${n}</var>
+<arg>${nm}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.009023" elapsed="0.000164"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.009518" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>1 &lt;= int(${n}) &lt;= 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.009260" elapsed="0.000290"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.009625" elapsed="0.000171"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.010150" level="INFO">${cl} = ['#f5a623']</msg>
+<var>${cl}</var>
+<arg>re.findall(r'\#[0-9a-fA-F]{6}', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.009865" elapsed="0.000305"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.010427" level="INFO">Length is 1.</msg>
+<arg>${cl}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.010241" elapsed="0.000213"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-04-15T12:17:49.979804" elapsed="0.030681"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:50.010827" level="INFO">${p_id} = page=9a0be92f-c978-41a6-80f9-725ff1ab03d3</msg>
+<var>${p_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.010692" elapsed="0.000152"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:50.011676" level="INFO">Switching to page page=9a0be92f-c978-41a6-80f9-725ff1ab03d3,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:50.020276" level="INFO">Successfully changed active page: page=9a0be92f-c978-41a6-80f9-725ff1ab03d3</msg>
+<arg>${p_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.011334" elapsed="0.009103"/>
+</kw>
+<msg time="2026-04-15T12:17:50.020580" level="INFO">${sw} = True</msg>
+<var>${sw}</var>
+<arg>Switch Page</arg>
+<arg>${p_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.011011" elapsed="0.009588"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${sw}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.020723" elapsed="0.000380"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:50.022842" level="INFO">${u} = about:blank</msg>
+<var>${u}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.021201" elapsed="0.001662"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'test_page' in '''${u}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.022943" elapsed="0.000238"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.023456" level="INFO">${found} = 4</msg>
+<var>${found}</var>
+<arg>${found} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.023260" elapsed="0.000215"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.039724" level="INFO">Text: '窗口编号: 1 | 颜色: #667eea'</msg>
+<msg time="2026-04-15T12:17:50.039881" level="INFO">${inf} = 窗口编号: 1 | 颜色: #667eea</msg>
+<var>${inf}</var>
+<arg>.info</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.023554" elapsed="0.016349"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.040554" level="INFO">${nm} = ['1', '667']</msg>
+<var>${nm}</var>
+<arg>re.findall(r'\\d+', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.040084" elapsed="0.000493"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:50.040820" level="INFO">${n} = 1</msg>
+<var>${n}</var>
+<arg>${nm}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.040664" elapsed="0.000173"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.041151" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>1 &lt;= int(${n}) &lt;= 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.040907" elapsed="0.000261"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.041295" elapsed="0.000221"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.041867" level="INFO">${cl} = ['#667eea']</msg>
+<var>${cl}</var>
+<arg>re.findall(r'\#[0-9a-fA-F]{6}', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.041595" elapsed="0.000294"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.042164" level="INFO">Length is 1.</msg>
+<arg>${cl}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.041964" elapsed="0.000229"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-04-15T12:17:50.010608" elapsed="0.031619"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-15T12:17:50.042582" level="INFO">${p_id} = page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<var>${p_id}</var>
+<arg>${page_ids}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.042442" elapsed="0.000158"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-04-15T12:17:50.043282" level="INFO">Switching to page page=4977aef3-7094-475e-8178-7a6c902a2938,context CURRENT, browser CURRENT</msg>
+<msg time="2026-04-15T12:17:50.051982" level="INFO">Successfully changed active page: page=4977aef3-7094-475e-8178-7a6c902a2938</msg>
+<arg>${p_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.042880" elapsed="0.009285"/>
+</kw>
+<msg time="2026-04-15T12:17:50.052326" level="INFO">${sw} = True</msg>
+<var>${sw}</var>
+<arg>Switch Page</arg>
+<arg>${p_id}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.042679" elapsed="0.009669"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>not ${sw}</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.052483" elapsed="0.000392"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-04-15T12:17:50.054574" level="INFO">${u} = http://localhost:8080/test_page.html</msg>
+<var>${u}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.053002" elapsed="0.001600"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2026-04-15T12:17:50.054971" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'test_page' in '''${u}'''</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.054713" elapsed="0.000310"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${found}</var>
+<arg>${found} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055106" elapsed="0.000050"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${inf}</var>
+<arg>.info</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055237" elapsed="0.000037"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${nm}</var>
+<arg>re.findall(r'\\d+', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055342" elapsed="0.000032"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<var>${n}</var>
+<arg>${nm}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055438" elapsed="0.000031"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${valid}</var>
+<arg>1 &lt;= int(${n}) &lt;= 5</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055525" elapsed="0.000029"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055613" elapsed="0.000044"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${cl}</var>
+<arg>re.findall(r'\#[0-9a-fA-F]{6}', '''${inf}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055713" elapsed="0.000031"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${cl}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-04-15T12:17:50.055801" elapsed="0.000031"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-04-15T12:17:50.042354" elapsed="0.013505"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}</value>
+<status status="PASS" start="2026-04-15T12:17:49.921715" elapsed="0.134201"/>
+</for>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${found} &gt;= 4</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.056035" elapsed="0.000300"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:50.072251" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.056416" elapsed="0.016021"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:50.081765" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.072599" elapsed="0.009367"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.082676" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.082161" elapsed="0.005392"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.088088" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>test</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.087734" elapsed="0.004864"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:50.093049" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.092733" elapsed="0.040583"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:50.949509" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.133517" elapsed="0.816170"/>
+</kw>
+<kw name="Cleanup And Go To Main Page" owner="common" type="TEARDOWN">
+<kw name="Go To" owner="Browser">
+<msg time="2026-04-15T12:17:50.966949" level="INFO">Successfully opened URL http://localhost:8080/test_page.html</msg>
+<arg>${TEST_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.950284" elapsed="0.016861"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:50.974335" level="INFO">Waited for Element with selector #login-page at state visible</msg>
+<arg>\#login-page</arg>
+<arg>visible</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.967312" elapsed="0.007124"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.974975" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#username</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.974570" elapsed="0.005601"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T12:17:50.980717" level="INFO">Fills the text 'test' in the given field.</msg>
+<arg>\#password</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.980316" elapsed="0.007277"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T12:17:50.988131" level="INFO">Clicks the element '.login-btn'.</msg>
+<arg>.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T12:17:50.987752" elapsed="0.246302"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T12:17:52.039666" level="INFO">Waited for Element with selector #main-page at state visible</msg>
+<arg>\#main-page</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-04-15T12:17:51.234279" elapsed="0.805575"/>
+</kw>
+<doc>Close all extra pages and reload main page</doc>
+<status status="PASS" start="2026-04-15T12:17:50.949974" elapsed="1.090021"/>
+</kw>
+<msg time="2026-04-15T12:17:52.052944" level="INFO">Successfully changed active page: page=c20974a8-0db5-439e-95c6-731ddaf5d237</msg>
+<msg time="2026-04-15T12:17:52.058306" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:52.061232" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:52.082721" level="INFO">Successfully changed active page: page=b4fc2204-6e6e-4917-a643-1f55257b6642</msg>
+<msg time="2026-04-15T12:17:52.089702" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:52.092491" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:52.116586" level="INFO">Successfully changed active page: page=c0687a7d-fe15-4499-bce8-1871165f1ed7</msg>
+<msg time="2026-04-15T12:17:52.123087" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:52.126681" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:52.148181" level="INFO">Successfully changed active page: page=7574ecd3-de23-409b-9a6d-e358e19b598b</msg>
+<msg time="2026-04-15T12:17:52.154909" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:52.157619" level="INFO">Returned active page id</msg>
+<msg time="2026-04-15T12:17:52.181281" level="INFO">Successfully changed active page: page=9a0be92f-c978-41a6-80f9-725ff1ab03d3</msg>
+<msg time="2026-04-15T12:17:52.190477" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<msg time="2026-04-15T12:17:52.193632" level="INFO">Returned active page id</msg>
+<status status="PASS" start="2026-04-15T12:17:45.310184" elapsed="6.729855"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T12:17:52.408126" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T12:17:52.194375" elapsed="0.213899"/>
+</kw>
+<doc>Multi-window test suite</doc>
+<status status="PASS" start="2026-04-15T12:17:07.280846" elapsed="45.127498"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Windows" id="s1" pass="8" fail="0" skip="0">Test Windows</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-15T12:17:07.429070" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+</errors>
+</robot>

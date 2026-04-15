@@ -1,0 +1,23 @@
+{
+  "main_page": "#main-page",
+  "alert_button": "button[onclick='showAlert()']",
+  "alert_button_tooltip": "button[onclick='showAlert()'] .tooltip",
+  "open_windows_button": "button.btn-orange[onclick='openFiveWindows()']",
+  "open_windows_tooltip": "button.btn-orange .tooltip",
+  "fruit_select": "#fruit-select",
+  "select_result": "#select-result",
+  "city_select": "#city-select",
+  "city_result": "#city-result",
+  "file_input": "#file-input",
+  "upload_drop_zone": "#upload-drop-zone",
+  "upload_file_info": "#upload-file-info",
+  "upload_file_name": "#upload-file-name",
+  "upload_file_meta": "#upload-file-meta",
+  "upload_file_fullpath": "#upload-file-fullpath",
+  "upload_clear_button": ".upload-clear-btn",
+  "comment_input": "#comment-input",
+  "comment_submit_button": ".comment-submit-btn",
+  "comment_list": "#comment-list",
+  "comment_items": ".comment-item",
+  "comment_toast": "#comment-toast"
+}
