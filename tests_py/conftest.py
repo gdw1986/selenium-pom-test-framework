@@ -7,7 +7,7 @@ import os
 @pytest.fixture(scope="session")
 def test_url():
     """被测页面 URL"""
-    return os.environ.get("TEST_URL", "http://localhost:8080/test_page.html")
+    return os.environ.get("TEST_URL", "https://blog.gdw1986.top/wp-content/uploads/2026/04/test_page.html")
 
 
 @pytest.fixture(scope="session")
