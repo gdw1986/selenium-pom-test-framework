@@ -21,23 +21,23 @@ pipeline {
         
         stage('Setup Environment') {
             steps {
-                sh '''
+                sh """
                     ${PIP_PATH} install -r requirements.txt
                     ${PIP_PATH} list | grep -E "pytest|allure|selenium"
-                '''
+                """
             }
         }
         
         stage('Run Tests') {
             steps {
-                sh '''
+                sh """
                     ${PYTHON_PATH} -m pytest tests_py/ \
                         --alluredir=allure-results \
                         --clean-alluredir \
                         -v \
                         --tb=short \
                         --headless
-                '''
+                """
             }
             post {
                 always {
