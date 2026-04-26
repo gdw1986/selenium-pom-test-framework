@@ -5,7 +5,10 @@ pipeline {
         // Jenkins 全局工具配置中的 Allure 名称
         allure 'allure-commandline'
     }
-    
+    environment {
+        PYTHON_PATH = 'python3'
+        PIP_PATH = 'pip3'
+    }
 
     
     stages {
@@ -18,11 +21,6 @@ pipeline {
         
         stage('Setup Environment') {
             steps {
-                sh '''
-                     apt-get update 
-                     apt-get install -y python3 python3-pip
-                     pip3 install -r requirements.txt
-                   '''
                 sh '''
                     ${PIP_PATH} install -r requirements.txt
                     ${PIP_PATH} list | grep -E "pytest|allure|selenium"
