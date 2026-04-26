@@ -4,7 +4,7 @@
 """
 
 # 测试页面配置
-TEST_URL = "http://localhost:8080/test_page.html"
+TEST_URL = "https://blog.gdw1986.top/wp-content/uploads/2026/04/test_page.html"
 
 # 登录配置
 LOGIN_USERNAME = "test"
