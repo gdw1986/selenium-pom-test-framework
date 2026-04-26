@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent macbookair
     
     tools {
         // Jenkins 全局工具配置中的 Allure 名称
@@ -7,8 +7,10 @@ pipeline {
     }
     
     environment {
-        PYTHON_PATH = '/usr/bin/python3'
-        PIP_PATH = '/usr/bin/pip3'
+         sh '''
+             apt-get update && apt-get install -y python3 python3-pip
+             pip3 install -r requirements.txt
+         '''
     }
     
     stages {
