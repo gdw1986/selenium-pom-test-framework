@@ -9,14 +9,6 @@ pipeline {
 
     
     stages {
-    stage('Setup Environment') {
-     steps {
-     sh '''
-     apt-get update && apt-get install -y python3 python3-pip
-     pip3 install -r requirements.txt
-     '''
-     }
-    }
         stage('Checkout') {
             steps {
                 checkout scm
@@ -26,6 +18,10 @@ pipeline {
         
         stage('Setup Environment') {
             steps {
+                sh '''
+                     apt-get update && apt-get install -y python3 python3-pip
+                     pip3 install -r requirements.txt
+                   '''
                 sh '''
                     ${PIP_PATH} install -r requirements.txt
                     ${PIP_PATH} list | grep -E "pytest|allure|selenium"
