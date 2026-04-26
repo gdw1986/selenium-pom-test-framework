@@ -1,19 +1,22 @@
 pipeline {
-    agent {macbookair}
+    agent { label 'macbookair' }
     
     tools {
         // Jenkins 全局工具配置中的 Allure 名称
         allure 'allure-commandline'
     }
     
-    environment {
-         sh '''
-             apt-get update && apt-get install -y python3 python3-pip
-             pip3 install -r requirements.txt
-         '''
-    }
+
     
     stages {
+    stage('Setup Environment') {
+     steps {
+     sh '''
+     apt-get update && apt-get install -y python3 python3-pip
+     pip3 install -r requirements.txt
+     '''
+     }
+    }
         stage('Checkout') {
             steps {
                 checkout scm
