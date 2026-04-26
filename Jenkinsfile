@@ -23,7 +23,6 @@ pipeline {
             steps {
                 sh """
                     "${PIP_PATH}" install -r requirements.txt
-                    "${PIP_PATH}" list | grep -E "pytest|allure|selenium"
                 """
             }
         }
