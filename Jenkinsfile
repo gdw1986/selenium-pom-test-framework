@@ -1,5 +1,5 @@
 pipeline {
-    agent macbookair
+    agent {macbookair}
     
     tools {
         // Jenkins 全局工具配置中的 Allure 名称
