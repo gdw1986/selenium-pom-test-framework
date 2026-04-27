@@ -55,15 +55,14 @@ pipeline {
             emailext(
                 subject: "✅ 构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-构建成功！
-
-项目: ${env.JOB_NAME}
-构建号: #${env.BUILD_NUMBER}
-测试环境: ${params.base_url}
-
-📊 Allure 测试报告: ${env.BUILD_URL}allure/
-
-🔗 控制台日志: ${env.BUILD_URL}console
+<div style="font-family: Arial, sans-serif; color: #333;">
+    <h2 style="color: #28a745;">✅ 构建成功</h2>
+    <p><b>项目:</b> ${env.JOB_NAME}</p>
+    <p><b>构建号:</b> #${env.BUILD_NUMBER}</p>
+    <p><b>测试环境:</b> ${params.base_url}</p>
+    <p><b>📊 Allure 报告:</b> <a href="${env.BUILD_URL}allure/">${env.BUILD_URL}allure/</a></p>
+    <p><b>🔗 控制台日志:</b> <a href="${env.BUILD_URL}console">${env.BUILD_URL}console</a></p>
+</div>
                 """,
                 to: "${params.email}"
             )
@@ -73,14 +72,14 @@ pipeline {
             emailext(
                 subject: "❌ 构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-构建失败！
-
-项目: ${env.JOB_NAME}
-构建号: #${env.BUILD_NUMBER}
-测试环境: ${params.base_url}
-
-📊 Allure 测试报告: ${env.BUILD_URL}allure/
-🔗 控制台日志: ${env.BUILD_URL}console
+<div style="font-family: Arial, sans-serif; color: #333;">
+    <h2 style="color: #dc3545;">❌ 构建失败</h2>
+    <p><b>项目:</b> ${env.JOB_NAME}</p>
+    <p><b>构建号:</b> #${env.BUILD_NUMBER}</p>
+    <p><b>测试环境:</b> ${params.base_url}</p>
+    <p><b>📊 Allure 报告:</b> <a href="${env.BUILD_URL}allure/">${env.BUILD_URL}allure/</a></p>
+    <p><b>🔗 控制台日志:</b> <a href="${env.BUILD_URL}console">${env.BUILD_URL}console</a></p>
+</div>
                 """,
                 to: "${params.email}"
             )
