@@ -1,12 +1,19 @@
 pipeline {
     agent { label 'macbookair' }
     
+    parameters {
+        string(name: 'email', defaultValue: '', description: '通知邮箱地址')
+        string(name: 'test_suite', defaultValue: 'tests_py', description: '测试目录 (tests_py 或 tests 或 tests/simple_test.robot)')
+        string(name: 'base_url', defaultValue: 'https://blog.gdw1986.top/wp-content/uploads/2026/04', description: '测试环境 BASE_URL')
+    }
+    
     tools {
         allure 'allure-commandline'
     }
     environment {
         PYTHON_PATH = 'python3'
         PIP_PATH = 'pip3'
+        BASE_URL = "${params.base_url}"
     }
     
     stages {
@@ -27,14 +34,32 @@ pipeline {
         
         stage('Run Tests') {
             steps {
-                sh """
-                    ${PYTHON_PATH} -m pytest "${params.test_suite}" \
-                        --alluredir=allure-results \
-                        --clean-alluredir \
-                        -v \
-                        --tb=short \
-                        --headless
-                """
+                script {
+                    // 根据测试目录判断是 robot 还是 pytest
+                    if (params.test_suite.endsWith('.robot')) {
+                        // Robot Framework 测试
+                        echo "Running Robot Framework tests: ${params.test_suite}"
+                        sh """
+                            robot -v TEST_URL:${params.base_url}/test_page.html \
+                                  -v BROWSER:chromium \
+                                  -v HEADLESS:true \
+                                  --outputdir results \
+                                  --loglevel DEBUG \
+                                  "${params.test_suite}"
+                        """
+                    } else {
+                        // Pytest 测试
+                        echo "Running pytest tests: ${params.test_suite}"
+                        sh """
+                            ${PYTHON_PATH} -m pytest "${params.test_suite}" \
+                                --alluredir=allure-results \
+                                --clean-alluredir \
+                                -v \
+                                --tb=short \
+                                --headless
+                        """
+                    }
+                }
             }
         }
     }
@@ -136,6 +161,7 @@ print('PASS_RATE: ' + str(round(pass_rate, 1)) + '%')
                         <table style="border-collapse: collapse; width: 100%; background: #f9f9f9;">
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>项目</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.JOB_NAME}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>构建号</b></td><td style="padding: 8px; border: 1px solid #ddd;">#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>测试环境</b></td><td style="padding: 8px; border: 1px solid #ddd;">${params.base_url}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>耗时</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.ALLURE_DURATION}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>触发原因</b></td><td style="padding: 8px; border: 1px solid #ddd;">${currentBuild.getBuildCauses()[0].shortDescription}</td></tr>
                         </table>
@@ -185,6 +211,7 @@ print('PASS_RATE: ' + str(round(pass_rate, 1)) + '%')
                         <table style="border-collapse: collapse; width: 100%; background: #f9f9f9;">
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>项目</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.JOB_NAME}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>构建号</b></td><td style="padding: 8px; border: 1px solid #ddd;">#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>测试环境</b></td><td style="padding: 8px; border: 1px solid #ddd;">${params.base_url}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>耗时</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.ALLURE_DURATION}</td></tr>
                             <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>触发原因</b></td><td style="padding: 8px; border: 1px solid #ddd;">${currentBuild.getBuildCauses()[0].shortDescription}</td></tr>
                         </table>
