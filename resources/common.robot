@@ -4,9 +4,9 @@ Library          Browser
 Library          OperatingSystem
 
 *** Variables ***
-${BROWSER}           chromium
-${HEADLESS}          ${FALSE}
-${TEST_URL}          http://localhost:8080/test_page.html
+${BROWSER}           %{BROWSER=chromium}
+${HEADLESS}          %{HEADLESS=false}
+${TEST_URL}          %{TEST_URL=https://blog.gdw1986.top/wp-content/uploads/2026/04/test_page.html}
 ${LOGIN_USERNAME}    test
 ${LOGIN_PASSWORD}    test
 ${DEFAULT_TIMEOUT}   10
@@ -14,7 +14,8 @@ ${DEFAULT_TIMEOUT}   10
 *** Keywords ***
 Open Browser To Test Page
     [Documentation]    Launch browser and navigate to test page
-    IF    ${HEADLESS}
+    ${headless_bool}=    Convert To Boolean    ${HEADLESS}
+    IF    ${headless_bool}
         Open Browser    ${TEST_URL}    browser=${BROWSER}    headless=${TRUE}
     ELSE
         Open Browser    ${TEST_URL}    browser=${BROWSER}
