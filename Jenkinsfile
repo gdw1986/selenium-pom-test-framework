@@ -54,16 +54,74 @@ pipeline {
     
     post {
         always {
+            script {
+                // 提取 Allure 测试数据
+                def summaryFile = 'allure-results/widgets/summary.json'
+                if (fileExists(summaryFile)) {
+                    def summary = readJSON file: summaryFile
+                    env.ALLURE_PASSED = summary.statistic.passed
+                    env.ALLURE_FAILED = summary.statistic.failed
+                    env.ALLURE_SKIPPED = summary.statistic.skipped
+                    env.ALLURE_TOTAL = summary.statistic.total
+                    if (summary.statistic.total > 0) {
+                        env.ALLURE_PASS_RATE = String.format("%.1f%%", (summary.statistic.passed / summary.statistic.total) * 100)
+                    } else {
+                        env.ALLURE_PASS_RATE = "N/A"
+                    }
+                    // 获取执行时间
+                    if (summary.time) {
+                        def durationMs = summary.time.duration ?: 0
+                        def durationSec = (durationMs / 1000).intValue()
+                        env.ALLURE_DURATION = String.format("%d分%d秒", (durationSec / 60).intValue(), durationSec % 60)
+                    }
+                }
+            }
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             cleanWs()
         }
         success {
             emailext (
-                subject: "✅ 构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                subject: "✅ 构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER} - 通过率 ${env.ALLURE_PASS_RATE}",
                 body: """
-                    <p>构建成功</p>
-                    <p>项目: ${env.JOB_NAME}</p>
-                    <p>构建号: ${env.BUILD_NUMBER}</p>
-                    <p>地址: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                    <div style="font-family: Arial, sans-serif; max-width: 600px;">
+                        <h2 style="color: #28a745; border-bottom: 2px solid #28a745; padding-bottom: 10px;">🎉 构建成功</h2>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">📋 构建信息</h3>
+                        <table style="border-collapse: collapse; width: 100%; background: #f9f9f9;">
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>项目</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.JOB_NAME}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>构建号</b></td><td style="padding: 8px; border: 1px solid #ddd;">#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>耗时</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.ALLURE_DURATION ?: currentBuild.durationString}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>触发原因</b></td><td style="padding: 8px; border: 1px solid #ddd;">${currentBuild.getBuildCauses()[0].shortDescription}</td></tr>
+                        </table>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">📊 测试结果</h3>
+                        <table style="border-collapse: collapse; width: 100%; text-align: center;">
+                            <tr style="background: #333; color: white;">
+                                <th style="padding: 10px; border: 1px solid #ddd;">总计</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">通过</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">失败</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">跳过</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">通过率</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><b>${env.ALLURE_TOTAL ?: 'N/A'}</b></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #28a745;"><b>${env.ALLURE_PASSED ?: 'N/A'}</b></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #dc3545;">${env.ALLURE_FAILED ?: 'N/A'}</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #ffc107;">${env.ALLURE_SKIPPED ?: 'N/A'}</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; background: #28a745; color: white;"><b>${env.ALLURE_PASS_RATE ?: 'N/A'}</b></td>
+                            </tr>
+                        </table>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">🔗 链接</h3>
+                        <ul style="line-height: 1.8;">
+                            <li><a href="${env.BUILD_URL}" style="color: #0366d6;">构建详情</a></li>
+                            <li><a href="${env.BUILD_URL}allure/" style="color: #0366d6;">Allure 测试报告</a></li>
+                            <li><a href="${env.BUILD_URL}console" style="color: #0366d6;">控制台日志</a></li>
+                        </ul>
+                        
+                        <hr style="margin-top: 20px; border: none; border-top: 1px solid #ddd;">
+                        <p style="color: #666; font-size: 12px;">此邮件由 Jenkins 自动发送 | ${new Date().format("yyyy-MM-dd HH:mm:ss")}</p>
+                    </div>
                 """,
                 to: "${params.email}"
             )
@@ -73,10 +131,45 @@ pipeline {
             emailext (
                 subject: "❌ 构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-                    <p>构建失败，请检查</p>
-                    <p>项目: ${env.JOB_NAME}</p>
-                    <p>构建号: ${env.BUILD_NUMBER}</p>
-                    <p>地址: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                    <div style="font-family: Arial, sans-serif; max-width: 600px;">
+                        <h2 style="color: #dc3545; border-bottom: 2px solid #dc3545; padding-bottom: 10px;">⚠️ 构建失败</h2>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">📋 构建信息</h3>
+                        <table style="border-collapse: collapse; width: 100%; background: #f9f9f9;">
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>项目</b></td><td style="padding: 8px; border: 1px solid #ddd;">${env.JOB_NAME}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>构建号</b></td><td style="padding: 8px; border: 1px solid #ddd;">#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>耗时</b></td><td style="padding: 8px; border: 1px solid #ddd;">${currentBuild.durationString}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>触发原因</b></td><td style="padding: 8px; border: 1px solid #ddd;">${currentBuild.getBuildCauses()[0].shortDescription}</td></tr>
+                        </table>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">📊 测试结果</h3>
+                        <table style="border-collapse: collapse; width: 100%; text-align: center;">
+                            <tr style="background: #333; color: white;">
+                                <th style="padding: 10px; border: 1px solid #ddd;">总计</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">通过</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">失败</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">跳过</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">通过率</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><b>${env.ALLURE_TOTAL ?: 'N/A'}</b></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #28a745;"><b>${env.ALLURE_PASSED ?: 'N/A'}</b></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #dc3545;"><b>${env.ALLURE_FAILED ?: 'N/A'}</b></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; color: #ffc107;">${env.ALLURE_SKIPPED ?: 'N/A'}</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; background: #dc3545; color: white;"><b>${env.ALLURE_PASS_RATE ?: 'N/A'}</b></td>
+                            </tr>
+                        </table>
+                        
+                        <h3 style="color: #333; margin-top: 20px;">🔗 链接</h3>
+                        <ul style="line-height: 1.8;">
+                            <li><a href="${env.BUILD_URL}" style="color: #0366d6;">构建详情</a></li>
+                            <li><a href="${env.BUILD_URL}allure/" style="color: #0366d6;">Allure 测试报告</a></li>
+                            <li><a href="${env.BUILD_URL}console" style="color: #0366d6;">控制台日志</a></li>
+                        </ul>
+                        
+                        <hr style="margin-top: 20px; border: none; border-top: 1px solid #ddd;">
+                        <p style="color: #666; font-size: 12px;">此邮件由 Jenkins 自动发送 | ${new Date().format("yyyy-MM-dd HH:mm:ss")}</p>
+                    </div>
                 """,
                 to: "${params.email}"
             )
