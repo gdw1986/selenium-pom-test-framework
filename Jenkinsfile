@@ -30,7 +30,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh """
-                    ${PYTHON_PATH} -m pytest tests_py/ \
+                    ${PYTHON_PATH} -m pytest tests/ \
                         --alluredir=allure-results \
                         --clean-alluredir \
                         -v \
