@@ -2,14 +2,12 @@ pipeline {
     agent { label 'macbookair' }
     
     tools {
-        // Jenkins 全局工具配置中的 Allure 名称
         allure 'allure-commandline'
     }
     environment {
         PYTHON_PATH = 'python3'
         PIP_PATH = 'pip3'
     }
-
     
     stages {
         stage('Checkout') {
@@ -40,7 +38,6 @@ pipeline {
             }
             post {
                 always {
-                    // 即使测试失败也继续生成报告
                     script {
                         currentBuild.result = 'SUCCESS'
                     }
@@ -57,14 +54,34 @@ pipeline {
     
     post {
         always {
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             cleanWs()
         }
         success {
+            emailext (
+                subject: "✅ 构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+                    <p>构建成功</p>
+                    <p>项目: ${env.JOB_NAME}</p>
+                    <p>构建号: ${env.BUILD_NUMBER}</p>
+                    <p>地址: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                """,
+                to: "${params.email}"
+            )
             echo '✅ All tests passed!'
         }
         failure {
-            echo '❌ Tests failed. Check Allure report for details.'
+            emailext (
+                subject: "❌ 构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+                    <p>构建失败，请检查</p>
+                    <p>项目: ${env.JOB_NAME}</p>
+                    <p>构建号: ${env.BUILD_NUMBER}</p>
+                    <p>地址: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                """,
+                to: "${params.email}"
+            )
+            echo '❌ Tests failed!'
         }
     }
 }
-
