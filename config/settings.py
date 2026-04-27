@@ -2,9 +2,10 @@
 测试配置文件
 集中管理测试环境配置
 """
+from config.urls import TEST_PAGE
 
-# 测试页面配置
-TEST_URL = "https://blog.gdw1986.top/wp-content/uploads/2026/04/test_page.html"
+# 测试页面配置 - 从 urls.py 导入，支持通过 BASE_URL 环境变量动态配置
+TEST_URL = TEST_PAGE
 
 # 登录配置
 LOGIN_USERNAME = "test"
