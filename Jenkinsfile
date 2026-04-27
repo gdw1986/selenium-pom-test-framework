@@ -33,12 +33,12 @@ pipeline {
                 script {
                     if (params.test_suite.endsWith('.robot')) {
                         // Robot Framework
-                        sh 'robot -v TEST_URL:${params.base_url}/test_page.html -v BROWSER:chromium -v HEADLESS:true --outputdir allure-results "${params.test_suite}"'
+                        sh "robot -v TEST_URL:${params.base_url}/test_page.html -v BROWSER:chromium -v HEADLESS:true --outputdir allure-results '${params.test_suite}'"
                         // Robot 结果转 Junit XML 给 Allure
-                        sh 'robot --outputdir allure-results --log NONE --report NONE --xunit test-results.xml "${params.test_suite}" || true'
+                        sh "robot --outputdir allure-results --log NONE --report NONE --xunit test-results.xml '\${params.test_suite}' || true"
                     } else {
                         // Pytest
-                        sh '${PYTHON_PATH} -m pytest "${params.test_suite}" --alluredir=allure-results --clean-alluredir -v --tb=short --headless'
+                        sh "${PYTHON_PATH} -m pytest '${params.test_suite}' --alluredir=allure-results --clean-alluredir -v --tb=short --headless"
                     }
                 }
             }
