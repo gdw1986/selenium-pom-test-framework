@@ -12,7 +12,7 @@ class TestTabNavigation:
 
     def test_tab_count(self, logged_in_page):
         page = logged_in_page
-        assert page.locator(".tab-btn").count() == 4
+        assert page.locator(".tab-btn").count() == 5
 
     def test_default_active_is_iframe(self, logged_in_page):
         page = logged_in_page
