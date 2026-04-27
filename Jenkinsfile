@@ -68,68 +68,34 @@ pipeline {
         always {
             script {
                 // 提取测试统计 - 无论成功失败都执行
-                sh '''
-                    python3 -c "
-import json
-import os
-import glob
-
-results_dir = 'allure-results'
-passed = 0
-failed = 0
-skipped = 0
-
-if os.path.exists(results_dir):
-    result_files = glob.glob(os.path.join(results_dir, '*-result.json'))
-    for f in result_files:
+                def statsJson = sh(
+                    script: """
+                        python3 -c "
+import json, os, glob
+passed = failed = skipped = 0
+if os.path.exists('allure-results'):
+    for f in glob.glob('allure-results/*-result.json'):
         try:
-            with open(f, 'r') as file:
-                data = json.load(file)
-                status = data.get('status', 'unknown')
-                if status == 'passed':
-                    passed += 1
-                elif status in ['failed', 'broken']:
-                    failed += 1
-                elif status == 'skipped':
-                    skipped += 1
-        except Exception as e:
-            print('Error reading ' + f + ': ' + str(e))
-
+            d = json.load(open(f))
+            s = d.get('status','')
+            if s == 'passed': passed += 1
+            elif s in ('failed','broken'): failed += 1
+            elif s == 'skipped': skipped += 1
+        except: pass
 total = passed + failed + skipped
-pass_rate = (passed / total * 100) if total > 0 else 0
-
-# 写入属性文件
-with open('test_stats.properties', 'w') as f:
-    f.write('PASSED=' + str(passed) + chr(10))
-    f.write('FAILED=' + str(failed) + chr(10))
-    f.write('SKIPPED=' + str(skipped) + chr(10))
-    f.write('TOTAL=' + str(total) + chr(10))
-    f.write('PASS_RATE=' + str(round(pass_rate, 1)) + chr(10))
-
-print('=== Test Statistics ===')
-print('PASSED: ' + str(passed))
-print('FAILED: ' + str(failed))
-print('SKIPPED: ' + str(skipped))
-print('TOTAL: ' + str(total))
-print('PASS_RATE: ' + str(round(pass_rate, 1)) + '%')
+rate = round(passed/total*100, 1) if total else 0
+print(json.dumps({'passed':passed,'failed':failed,'skipped':skipped,'total':total,'rate':rate}))
 "
-                '''
+                    """,
+                    returnStdout: true
+                ).trim()
                 
-                // 读取统计结果
-                if (fileExists('test_stats.properties')) {
-                    def props = readProperties file: 'test_stats.properties'
-                    env.ALLURE_PASSED = props['PASSED'] ?: '0'
-                    env.ALLURE_FAILED = props['FAILED'] ?: '0'
-                    env.ALLURE_SKIPPED = props['SKIPPED'] ?: '0'
-                    env.ALLURE_TOTAL = props['TOTAL'] ?: '0'
-                    env.ALLURE_PASS_RATE = (props['PASS_RATE'] ?: '0') + '%'
-                } else {
-                    env.ALLURE_PASSED = '0'
-                    env.ALLURE_FAILED = '0'
-                    env.ALLURE_SKIPPED = '0'
-                    env.ALLURE_TOTAL = '0'
-                    env.ALLURE_PASS_RATE = '0%'
-                }
+                def stats = readJSON text: statsJson
+                env.ALLURE_PASSED = String.valueOf(stats.passed)
+                env.ALLURE_FAILED = String.valueOf(stats.failed)
+                env.ALLURE_SKIPPED = String.valueOf(stats.skipped)
+                env.ALLURE_TOTAL = String.valueOf(stats.total)
+                env.ALLURE_PASS_RATE = String.valueOf(stats.rate) + '%'
                 
                 // 计算耗时
                 def durationMs = currentBuild.duration
@@ -138,12 +104,11 @@ print('PASS_RATE: ' + str(round(pass_rate, 1)) + '%')
                 def seconds = durationSec % 60
                 env.ALLURE_DURATION = "${minutes}分${seconds}秒"
                 
-                echo "=== Final Statistics ==="
+                echo "=== Test Statistics ==="
                 echo "PASSED: ${env.ALLURE_PASSED}"
                 echo "FAILED: ${env.ALLURE_FAILED}"
                 echo "TOTAL: ${env.ALLURE_TOTAL}"
                 echo "PASS_RATE: ${env.ALLURE_PASS_RATE}"
-                echo "DURATION: ${env.ALLURE_DURATION}"
             }
             
             // 生成 Allure 报告
