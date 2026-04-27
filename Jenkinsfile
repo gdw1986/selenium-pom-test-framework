@@ -54,45 +54,71 @@ pipeline {
         stage('Extract Test Statistics') {
             steps {
                 script {
-                    // 统计 allure-results 目录下的测试结果
-                    def passed = 0
-                    def failed = 0
-                    def skipped = 0
-                    def totalDuration = 0
+                    // 用 Python 脚本统计，更可靠
+                    sh '''
+                        python3 << 'EOF'
+import json
+import os
+import glob
+
+results_dir = 'allure-results'
+passed = 0
+failed = 0
+skipped = 0
+
+if os.path.exists(results_dir):
+    result_files = glob.glob(os.path.join(results_dir, '*-result.json'))
+    for f in result_files:
+        try:
+            with open(f, 'r') as file:
+                data = json.load(file)
+                status = data.get('status', 'unknown')
+                if status == 'passed':
+                    passed += 1
+                elif status in ['failed', 'broken']:
+                    failed += 1
+                elif status == 'skipped':
+                    skipped += 1
+        except Exception as e:
+            print(f"Error reading {f}: {e}")
+
+total = passed + failed + skipped
+pass_rate = (passed / total * 100) if total > 0 else 0
+
+# 写入文件供后续读取
+with open('test_stats.txt', 'w') as f:
+    f.write(f"PASSED={passed}\\n")
+    f.write(f"FAILED={failed}\\n")
+    f.write(f"SKIPPED={skipped}\\n")
+    f.write(f"TOTAL={total}\\n")
+    f.write(f"PASS_RATE={pass_rate:.1f}\\n")
+
+print(f"Stats: passed={passed}, failed={failed}, skipped={skipped}, total={total}, rate={pass_rate:.1f}%")
+EOF
+                    '''
                     
-                    if (fileExists('allure-results')) {
-                        def files = findFiles(glob: 'allure-results/*-result.json')
-                        files.each { f ->
-                            try {
-                                def content = readFile file: f.path
-                                def json = new groovy.json.JsonSlurper().parseText(content)
-                                totalDuration += json.start ?: 0
-                                totalDuration += json.stop ?: 0
-                                
-                                if (json.status == 'passed') {
-                                    passed++
-                                } else if (json.status == 'failed' || json.status == 'broken') {
-                                    failed++
-                                } else if (json.status == 'skipped') {
-                                    skipped++
-                                }
-                            } catch (Exception e) {
-                                echo "Error parsing ${f.path}: ${e.message}"
+                    // 读取统计结果
+                    if (fileExists('test_stats.txt')) {
+                        def stats = readFile('test_stats.txt').trim().split('\n')
+                        stats.each { line ->
+                            def parts = line.split('=')
+                            if (parts.size() == 2) {
+                                def key = parts[0]
+                                def value = parts[1]
+                                if (key == 'PASSED') env.ALLURE_PASSED = value
+                                else if (key == 'FAILED') env.ALLURE_FAILED = value
+                                else if (key == 'SKIPPED') env.ALLURE_SKIPPED = value
+                                else if (key == 'TOTAL') env.ALLURE_TOTAL = value
+                                else if (key == 'PASS_RATE') env.ALLURE_PASS_RATE = "${value}%"
                             }
                         }
                     }
                     
-                    def total = passed + failed + skipped
-                    env.ALLURE_PASSED = passed
-                    env.ALLURE_FAILED = failed
-                    env.ALLURE_SKIPPED = skipped
-                    env.ALLURE_TOTAL = total
-                    
-                    if (total > 0) {
-                        env.ALLURE_PASS_RATE = String.format("%.1f%%", (passed / total) * 100)
-                    } else {
-                        env.ALLURE_PASS_RATE = "N/A"
-                    }
+                    echo "ALLURE_PASSED = ${env.ALLURE_PASSED}"
+                    echo "ALLURE_FAILED = ${env.ALLURE_FAILED}"
+                    echo "ALLURE_SKIPPED = ${env.ALLURE_SKIPPED}"
+                    echo "ALLURE_TOTAL = ${env.ALLURE_TOTAL}"
+                    echo "ALLURE_PASS_RATE = ${env.ALLURE_PASS_RATE}"
                     
                     // 计算总耗时
                     def durationSec = currentBuild.duration / 1000
