@@ -28,7 +28,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh """
-                    ${PYTHON_PATH} -m pytest tests/ \
+                    ${PYTHON_PATH} -m pytest "${params.test_suite}" \
                         --alluredir=allure-results \
                         --clean-alluredir \
                         -v \
