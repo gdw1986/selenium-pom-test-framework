@@ -36,27 +36,15 @@ pipeline {
                         --headless
                 """
             }
-            post {
-                always {
-                    script {
-                        currentBuild.result = 'SUCCESS'
-                    }
-                }
-            }
         }
-        
-        stage('Generate Allure Report') {
-            steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-            }
-        }
-        
-        stage('Extract Test Statistics') {
-            steps {
-                script {
-                    // 用 Python 脚本统计
-                    sh '''
-                        python3 -c "
+    }
+    
+    post {
+        always {
+            script {
+                // 提取测试统计 - 无论成功失败都执行
+                sh '''
+                    python3 -c "
 import json
 import os
 import glob
@@ -85,54 +73,58 @@ if os.path.exists(results_dir):
 total = passed + failed + skipped
 pass_rate = (passed / total * 100) if total > 0 else 0
 
-# 写入属性文件格式
+# 写入属性文件
 with open('test_stats.properties', 'w') as f:
-    f.write('PASSED=' + str(passed) + '\n')
-    f.write('FAILED=' + str(failed) + '\n')
-    f.write('SKIPPED=' + str(skipped) + '\n')
-    f.write('TOTAL=' + str(total) + '\n')
-    f.write('PASS_RATE=' + str(round(pass_rate, 1)) + '\n')
+    f.write('PASSED=' + str(passed) + chr(10))
+    f.write('FAILED=' + str(failed) + chr(10))
+    f.write('SKIPPED=' + str(skipped) + chr(10))
+    f.write('TOTAL=' + str(total) + chr(10))
+    f.write('PASS_RATE=' + str(round(pass_rate, 1)) + chr(10))
 
-print('Stats: passed=' + str(passed) + ', failed=' + str(failed) + ', skipped=' + str(skipped) + ', total=' + str(total) + ', rate=' + str(round(pass_rate, 1)) + '%')
+print('=== Test Statistics ===')
+print('PASSED: ' + str(passed))
+print('FAILED: ' + str(failed))
+print('SKIPPED: ' + str(skipped))
+print('TOTAL: ' + str(total))
+print('PASS_RATE: ' + str(round(pass_rate, 1)) + '%')
 "
-                    '''
-                    
-                    // 读取统计结果
-                    if (fileExists('test_stats.properties')) {
-                        def props = readProperties file: 'test_stats.properties'
-                        env.ALLURE_PASSED = props['PASSED']
-                        env.ALLURE_FAILED = props['FAILED']
-                        env.ALLURE_SKIPPED = props['SKIPPED']
-                        env.ALLURE_TOTAL = props['TOTAL']
-                        env.ALLURE_PASS_RATE = props['PASS_RATE'] + '%'
-                    }
-                    
-                    echo "=== Test Statistics ==="
-                    echo "PASSED: ${env.ALLURE_PASSED}"
-                    echo "FAILED: ${env.ALLURE_FAILED}"
-                    echo "SKIPPED: ${env.ALLURE_SKIPPED}"
-                    echo "TOTAL: ${env.ALLURE_TOTAL}"
-                    echo "PASS_RATE: ${env.ALLURE_PASS_RATE}"
+                '''
+                
+                // 读取统计结果
+                if (fileExists('test_stats.properties')) {
+                    def props = readProperties file: 'test_stats.properties'
+                    env.ALLURE_PASSED = props['PASSED'] ?: '0'
+                    env.ALLURE_FAILED = props['FAILED'] ?: '0'
+                    env.ALLURE_SKIPPED = props['SKIPPED'] ?: '0'
+                    env.ALLURE_TOTAL = props['TOTAL'] ?: '0'
+                    env.ALLURE_PASS_RATE = (props['PASS_RATE'] ?: '0') + '%'
+                } else {
+                    env.ALLURE_PASSED = '0'
+                    env.ALLURE_FAILED = '0'
+                    env.ALLURE_SKIPPED = '0'
+                    env.ALLURE_TOTAL = '0'
+                    env.ALLURE_PASS_RATE = '0%'
                 }
-            }
-        }
-    }
-    
-    post {
-        always {
-            script {
-                // 在 post 里计算耗时，此时构建已完成
+                
+                // 计算耗时
                 def durationMs = currentBuild.duration
                 def durationSec = (durationMs / 1000).intValue()
                 def minutes = (durationSec / 60).intValue()
                 def seconds = durationSec % 60
                 env.ALLURE_DURATION = "${minutes}分${seconds}秒"
                 
-                echo "Build Duration: ${env.ALLURE_DURATION}"
+                echo "=== Final Statistics ==="
+                echo "PASSED: ${env.ALLURE_PASSED}"
+                echo "FAILED: ${env.ALLURE_FAILED}"
+                echo "TOTAL: ${env.ALLURE_TOTAL}"
+                echo "PASS_RATE: ${env.ALLURE_PASS_RATE}"
+                echo "DURATION: ${env.ALLURE_DURATION}"
             }
+            
+            // 生成 Allure 报告
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-            cleanWs()
         }
+        
         success {
             emailext (
                 subject: "✅ 构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER} - 通过率 ${env.ALLURE_PASS_RATE}",
@@ -181,6 +173,7 @@ print('Stats: passed=' + str(passed) + ', failed=' + str(failed) + ', skipped=' 
             )
             echo '✅ All tests passed!'
         }
+        
         failure {
             emailext (
                 subject: "❌ 构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
@@ -228,6 +221,10 @@ print('Stats: passed=' + str(passed) + ', failed=' + str(failed) + ', skipped=' 
                 to: "${params.email}"
             )
             echo '❌ Tests failed!'
+        }
+        
+        cleanup {
+            cleanWs()
         }
     }
 }
