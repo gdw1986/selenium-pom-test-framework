@@ -54,9 +54,9 @@ pipeline {
         stage('Extract Test Statistics') {
             steps {
                 script {
-                    // 用 Python 脚本统计，更可靠
+                    // 用 Python 脚本统计
                     sh '''
-                        python3 << 'EOF'
+                        python3 -c "
 import json
 import os
 import glob
@@ -80,49 +80,39 @@ if os.path.exists(results_dir):
                 elif status == 'skipped':
                     skipped += 1
         except Exception as e:
-            print(f"Error reading {f}: {e}")
+            print('Error reading ' + f + ': ' + str(e))
 
 total = passed + failed + skipped
 pass_rate = (passed / total * 100) if total > 0 else 0
 
-# 写入文件供后续读取
-with open('test_stats.txt', 'w') as f:
-    f.write(f"PASSED={passed}\\n")
-    f.write(f"FAILED={failed}\\n")
-    f.write(f"SKIPPED={skipped}\\n")
-    f.write(f"TOTAL={total}\\n")
-    f.write(f"PASS_RATE={pass_rate:.1f}\\n")
+# 写入属性文件格式
+with open('test_stats.properties', 'w') as f:
+    f.write('PASSED=' + str(passed) + '\n')
+    f.write('FAILED=' + str(failed) + '\n')
+    f.write('SKIPPED=' + str(skipped) + '\n')
+    f.write('TOTAL=' + str(total) + '\n')
+    f.write('PASS_RATE=' + str(round(pass_rate, 1)) + '\n')
 
-print(f"Stats: passed={passed}, failed={failed}, skipped={skipped}, total={total}, rate={pass_rate:.1f}%")
-EOF
+print('Stats: passed=' + str(passed) + ', failed=' + str(failed) + ', skipped=' + str(skipped) + ', total=' + str(total) + ', rate=' + str(round(pass_rate, 1)) + '%')
+"
                     '''
                     
                     // 读取统计结果
-                    if (fileExists('test_stats.txt')) {
-                        def stats = readFile('test_stats.txt').trim().split('\n')
-                        stats.each { line ->
-                            def parts = line.split('=')
-                            if (parts.size() == 2) {
-                                def key = parts[0]
-                                def value = parts[1]
-                                if (key == 'PASSED') env.ALLURE_PASSED = value
-                                else if (key == 'FAILED') env.ALLURE_FAILED = value
-                                else if (key == 'SKIPPED') env.ALLURE_SKIPPED = value
-                                else if (key == 'TOTAL') env.ALLURE_TOTAL = value
-                                else if (key == 'PASS_RATE') env.ALLURE_PASS_RATE = "${value}%"
-                            }
-                        }
+                    if (fileExists('test_stats.properties')) {
+                        def props = readProperties file: 'test_stats.properties'
+                        env.ALLURE_PASSED = props['PASSED']
+                        env.ALLURE_FAILED = props['FAILED']
+                        env.ALLURE_SKIPPED = props['SKIPPED']
+                        env.ALLURE_TOTAL = props['TOTAL']
+                        env.ALLURE_PASS_RATE = props['PASS_RATE'] + '%'
                     }
                     
-                    echo "ALLURE_PASSED = ${env.ALLURE_PASSED}"
-                    echo "ALLURE_FAILED = ${env.ALLURE_FAILED}"
-                    echo "ALLURE_SKIPPED = ${env.ALLURE_SKIPPED}"
-                    echo "ALLURE_TOTAL = ${env.ALLURE_TOTAL}"
-                    echo "ALLURE_PASS_RATE = ${env.ALLURE_PASS_RATE}"
-                    
-                    // 计算总耗时
-                    def durationSec = currentBuild.duration / 1000
-                    env.ALLURE_DURATION = String.format("%d分%d秒", (durationSec / 60).intValue(), durationSec % 60)
+                    echo "=== Test Statistics ==="
+                    echo "PASSED: ${env.ALLURE_PASSED}"
+                    echo "FAILED: ${env.ALLURE_FAILED}"
+                    echo "SKIPPED: ${env.ALLURE_SKIPPED}"
+                    echo "TOTAL: ${env.ALLURE_TOTAL}"
+                    echo "PASS_RATE: ${env.ALLURE_PASS_RATE}"
                 }
             }
         }
@@ -130,6 +120,16 @@ EOF
     
     post {
         always {
+            script {
+                // 在 post 里计算耗时，此时构建已完成
+                def durationMs = currentBuild.duration
+                def durationSec = (durationMs / 1000).intValue()
+                def minutes = (durationSec / 60).intValue()
+                def seconds = durationSec % 60
+                env.ALLURE_DURATION = "${minutes}分${seconds}秒"
+                
+                echo "Build Duration: ${env.ALLURE_DURATION}"
+            }
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             cleanWs()
         }
