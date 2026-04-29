@@ -16,6 +16,12 @@ pipeline {
     }
     
     stages {
+        stage('Agent Info') {
+         steps {
+             echo "Running on agent: ${env.NODE_NAME}"
+             sh "hostname && uname -a"
+             }
+        }
         stage('Checkout') {
             steps {
                 checkout scm
