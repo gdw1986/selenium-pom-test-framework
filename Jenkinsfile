@@ -11,8 +11,8 @@ pipeline {
         allure 'allure-commandline'
     }
     environment {
-        PYTHON_PATH = 'python3'
-        PIP_PATH = 'pip3'
+        PYTHON_PATH = 'venv/bin/python'
+        PIP_PATH = 'venv/bin/pip3'
     }
     
     stages {
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo "Use venv"
                 sh '"${PYTHON_PATH}" -m venv venv'
-                sh 'venv/bin/pip install -r requirements.txt'
+                sh '${PIP_PATH} -r requirements.txt'
             }
         }
         
