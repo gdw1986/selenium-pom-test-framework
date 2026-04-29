@@ -35,6 +35,7 @@ pipeline {
                    python3 -m venv venv
                    "${PIP_PATH}" install -r requirements.txt
                    venv/bin/playwright install 
+                   venv/bin/playwright install-deps
                 """
             }
         }
