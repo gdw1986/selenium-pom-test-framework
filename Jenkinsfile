@@ -30,6 +30,9 @@ pipeline {
         
         stage('Setup Environment') {
             steps {
+                echo "Use venv"
+                sh '"${PYTHON_PATH}" -m venv venv'
+                sh 'source venv/bin/activate'
                 sh '"${PIP_PATH}" install -r requirements.txt'
             }
         }
