@@ -31,8 +31,10 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo "Use venv"
-                python3 -m venv venv
-                "${PIP_PATH}" -r requirements.txt
+                sh """
+                   python3 -m venv venv
+                   "${PIP_PATH}" -r requirements.txt
+                """
             }
         }
         
@@ -46,7 +48,7 @@ pipeline {
                         sh "robot --outputdir allure-results --log NONE --report NONE --xunit test-results.xml '\${params.test_suite}' || true"
                     } else {
                         // Pytest
-                        ${PYTHON_PATH} -m pytest '${params.test_suite}' --alluredir=allure-results --clean-alluredir -v --tb=short --headless
+                        sh "${PYTHON_PATH} -m pytest '${params.test_suite}' --alluredir=allure-results --clean-alluredir -v --tb=short --headless"
                     }
                 }
             }
