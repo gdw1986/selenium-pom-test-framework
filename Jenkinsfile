@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters {
-        string(name: 'email', defaultValue: '', description: '通知邮箱地址')
+        string(name: 'email', defaultValue: 'gdw86216@163.com', description: '通知邮箱地址')
         string(name: 'test_suite', defaultValue: 'tests_py', description: '测试目录 (tests_py 或 tests 或 tests/simple_test.robot)')
         string(name: 'base_url', defaultValue: 'https://blog.gdw1986.top/wp-content/uploads/2026/04', description: '测试环境 BASE_URL')
     }
