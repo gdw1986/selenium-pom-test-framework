@@ -11,7 +11,7 @@ pipeline {
         allure 'allure-commandline'
     }
     environment {
-        PYTHON_PATH = 'venv/bin/python'
+        PYTHON_PATH = 'venv/bin/python3'
         PIP_PATH = 'venv/bin/pip3'
     }
     
@@ -31,8 +31,8 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo "Use venv"
-                sh '"${PYTHON_PATH}" -m venv venv'
-                sh '${PIP_PATH} -r requirements.txt'
+                python3 -m venv venv
+                "${PIP_PATH}" -r requirements.txt
             }
         }
         
@@ -46,7 +46,7 @@ pipeline {
                         sh "robot --outputdir allure-results --log NONE --report NONE --xunit test-results.xml '\${params.test_suite}' || true"
                     } else {
                         // Pytest
-                        sh "${PYTHON_PATH} -m pytest '${params.test_suite}' --alluredir=allure-results --clean-alluredir -v --tb=short --headless"
+                        ${PYTHON_PATH} -m pytest '${params.test_suite}' --alluredir=allure-results --clean-alluredir -v --tb=short --headless
                     }
                 }
             }
