@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    options {
+        timeout(time: 30, unit: 'MINUTES') // 超时 30 分钟
+    }
     parameters {
         string(name: 'email', defaultValue: 'gdw86216@163.com', description: '通知邮箱地址')
         string(name: 'test_suite', defaultValue: 'tests_py', description: '测试目录 (tests_py 或 tests 或 tests/simple_test.robot)')
