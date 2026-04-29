@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'macbookair' }
+    agent any
     
     parameters {
         string(name: 'email', defaultValue: '', description: '通知邮箱地址')
